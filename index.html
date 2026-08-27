@@ -6,12 +6,13 @@
     <title>Ryan Epperly | Aerospace Engineering</title>
     <style>
         :root {
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --accent-color: #0ea5e9;
-            --accent-hover: #0284c7;
+            --text-main: #cbd5e1;
+            --text-muted: #94a3b8;
+            --bg-color: #050814;
+            --card-bg: #0f172a;
+            --accent-color: #38bdf8;
+            --accent-hover: #7dd3fc;
+            --border-glow: rgba(56, 189, 248, 0.15);
         }
         
         body {
@@ -19,20 +20,19 @@
             line-height: 1.7;
             color: var(--text-main);
             background-color: var(--bg-color);
+            background-image: radial-gradient(circle at top right, #0a1128, transparent 40%), radial-gradient(circle at bottom left, #070b19, transparent 40%);
             margin: 0;
             padding: 0;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Fluid Gradient Header */
         header {
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            background: linear-gradient(135deg, #020617 0%, #0a1128 100%);
             color: white;
             padding: 80px 20px 60px;
             text-align: center;
-            border-bottom-left-radius: 30px;
-            border-bottom-right-radius: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-bottom: 1px solid #1e293b;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px var(--border-glow);
             margin-bottom: 40px;
         }
         
@@ -41,13 +41,14 @@
             font-size: 3rem;
             font-weight: 800;
             letter-spacing: -1px;
+            color: #f8fafc;
         }
         
         header p {
             font-size: 1.25rem;
             margin: 15px 0 25px;
             font-weight: 300;
-            color: #e2e8f0;
+            color: var(--accent-color);
         }
 
         .contact-bar {
@@ -61,31 +62,31 @@
         }
 
         .contact-bar a {
-            color: #bae6fd;
+            color: var(--text-main);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .contact-bar a:hover {
-            color: #ffffff;
+            color: var(--accent-color);
         }
 
         .btn {
             display: inline-block;
             background-color: var(--accent-color);
-            color: white;
+            color: #020617;
             padding: 12px 28px;
-            border-radius: 30px;
+            border-radius: 4px;
             text-decoration: none;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.4);
+            font-weight: 700;
+            box-shadow: 0 4px 15px var(--border-glow);
             transition: all 0.3s ease;
         }
 
         .btn:hover {
             background-color: var(--accent-hover);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(14, 165, 233, 0.6);
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
         }
 
         .container {
@@ -95,7 +96,7 @@
         }
 
         .section-title {
-            color: #0f172a;
+            color: #f8fafc;
             font-size: 1.8rem;
             font-weight: 700;
             margin-top: 50px;
@@ -104,32 +105,31 @@
             position: relative;
         }
 
-        /* Fluid underline effect for headers */
         .section-title::after {
             content: '';
             position: absolute;
-            width: 50%;
-            height: 4px;
+            width: 40%;
+            height: 3px;
             background: var(--accent-color);
             bottom: -5px;
             left: 0;
-            border-radius: 2px;
         }
 
-        /* Floating Cards */
         .card {
             background: var(--card-bg);
-            border-radius: 16px;
+            border-radius: 12px;
             padding: 30px;
             margin-bottom: 25px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02), 0 10px 15px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
             transition: all 0.3s ease;
-            border: 1px solid rgba(226, 232, 240, 0.8);
+            border: 1px solid #1e293b;
+            overflow: hidden;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.06), 0 20px 30px rgba(0,0,0,0.04);
+            transform: translateY(-4px);
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 30px var(--border-glow);
         }
 
         .card-header {
@@ -142,7 +142,7 @@
 
         .card h3 {
             margin: 0;
-            color: #0f172a;
+            color: #f8fafc;
             font-size: 1.3rem;
             font-weight: 700;
         }
@@ -156,24 +156,34 @@
 
         .date {
             font-size: 0.95rem;
-            color: var(--text-muted);
+            color: var(--accent-color);
             font-weight: 500;
-            background: #f1f5f9;
+            background: rgba(56, 189, 248, 0.1);
             padding: 4px 12px;
-            border-radius: 20px;
+            border-radius: 4px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
         }
 
         ul {
             margin: 15px 0 0;
             padding-left: 20px;
-            color: #334155;
+            color: var(--text-main);
         }
 
         li {
             margin-bottom: 10px;
         }
+        
+        .inline-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .inline-link:hover {
+            text-decoration: underline;
+        }
 
-        /* Pill-shaped Tags for Fluidity */
         .tag-group {
             margin-bottom: 20px;
         }
@@ -185,7 +195,7 @@
         .tag-title {
             font-weight: 700;
             margin-bottom: 10px;
-            color: #0f172a;
+            color: #f8fafc;
             font-size: 1rem;
         }
 
@@ -199,18 +209,33 @@
         }
 
         .tags li {
-            background: #e0f2fe;
-            color: #0369a1;
+            background: #1e293b;
+            color: var(--accent-color);
             padding: 6px 14px;
-            border-radius: 20px;
+            border-radius: 4px;
             font-size: 0.9rem;
             font-weight: 500;
             margin: 0;
-            transition: background 0.3s ease;
+            border: 1px solid #334155;
+            transition: all 0.3s ease;
         }
 
         .tags li:hover {
-            background: #bae6fd;
+            background: var(--accent-color);
+            color: #020617;
+        }
+
+        .img-right {
+            float: right;
+            margin: 0 0 15px 20px;
+            border-radius: 8px;
+            max-width: 100px;
+        }
+
+        .img-patch {
+            border-radius: 50%;
+            border: 2px solid var(--accent-color);
+            background: #ffffff;
         }
 
         footer {
@@ -219,6 +244,7 @@
             font-size: 0.95rem;
             color: var(--text-muted);
             margin-top: 40px;
+            border-top: 1px solid #1e293b;
         }
     </style>
 </head>
@@ -244,6 +270,7 @@
     <section>
         <h2 class="section-title">Education</h2>
         <div class="card">
+            <img src="VT-LOGO.webp" alt="Virginia Tech Logo" class="img-right">
             <div class="card-header">
                 <h3>Virginia Tech</h3>
                 <span class="date">Jan 2026 – May 2028</span>
@@ -261,48 +288,20 @@
             <p style="margin: 10px 0 0;">Graduated Magna Cum Laude</p>
         </div>
     </section>
-
+    
     <section>
-        <h2 class="section-title">Technical Skills & Certifications</h2>
+        <h2 class="section-title">Verified Training & Certifications</h2>
         <div class="card">
-            <div class="tag-group">
-                <div class="tag-title">Software & Programming</div>
-                <ul class="tags">
-                    <li>SolidWorks</li>
-                    <li>AutoCAD</li>
-                    <li>Autodesk Inventor</li>
-                    <li>Ansys</li>
-                    <li>MATLAB</li>
-                    <li>Python</li>
-                    <li>Java</li>
-                    <li>GNU Octave</li>
-                    <li>LaTeX</li>
-                    <li>PrusaSlicer</li>
-                </ul>
+            <div class="card-header">
+                <h3>Radio Wave Propagation</h3>
+                <span class="date">Aug 21, 2026</span>
             </div>
-            <div class="tag-group">
-                <div class="tag-title">Hardware & Testing</div>
-                <ul class="tags">
-                    <li>3D Printing (Bambu Lab P2S, FDM/SLA)</li>
-                    <li>CNC Machining</li>
-                    <li>Plasma Cutters</li>
-                    <li>Laser Cutters</li>
-                    <li>Waterjet Cutters</li>
-                    <li>Glowforge</li>
-                    <li>Mecmesin Testing</li>
-                </ul>
-            </div>
-            <div class="tag-group">
-                <div class="tag-title">Certifications</div>
-                <ul class="tags">
-                    <li>FAA UAS Safety Test</li>
-                    <li>NASA Open Science 101</li>
-                    <li>Ansys Topology Optimization</li>
-                    <li>FAA NAFI SMS</li>
-                    <li>FEMA (IS-66, IS-922.A)</li>
-                    <li>UCAR Satellite Remote Sensing</li>
-                </ul>
-            </div>
+            <ul>
+                <li>Successfully completed the online learning course "Radio Wave Propagation"[cite: 2].</li>
+                <li>Issued by the University Corporation for Atmospheric Research's The COMET® Program[cite: 2].</li>
+                <li>The online learning course required 1.00 - 1.25 hours to complete[cite: 2].</li>
+                <li><a href="Radio Wave Propagation.pdf" class="inline-link" target="_blank">View Verified Certificate (PDF)</a></li>
+            </ul>
         </div>
     </section>
 
@@ -319,19 +318,19 @@
                 <li>Designed a line continuity tool in SolidWorks, optimizing geometry to eliminate sharp edges and prevent cord snagging.</li>
                 <li>Executed 150+ Mecmesin/hydraulic tensile tests and performed 10 operational drop tests with a custom load cell amplifier enclosure.</li>
                 <li>Engineered a quality control program referencing PIA documents and MIL-STD-849D, improving inspection efficiency by 20%.</li>
-                <li>Fabricated government-regulated hardware using a Glowforge, plasma, and laser cutters; rigged 2 personnel parachutes with an FAA master rigger.</li>
             </ul>
         </div>
 
         <div class="card">
+            <img src="Screenshot 2026-08-27 131325.png" alt="GEOINT ISAC Patch" class="img-right img-patch">
             <div class="card-header">
                 <h3>International Association of Certified ISAOs (IACI) / GEOINT ISAC</h3>
                 <span class="date">May 2026 – Aug 2026</span>
             </div>
             <div class="subtitle">Space Systems Intern</div>
             <ul>
-                <li>Collaborated with NASA to conduct research on critical infrastructure resilience and geospatial risk factors, authoring technical papers on climate-induced aviation density altitude penalties and federal emergency response framework mechanisms (ESFs/SRMAs).</li>
-                <li>Evaluated LEO satellite constellation resilience and Starlink space-based communications to enhance disaster situational awareness and community lifeline restoration.</li>
+                <li>Collaborated with NASA to conduct research on critical infrastructure resilience and geospatial risk factors, authoring technical papers on climate-induced aviation density altitude penalties.</li>
+                <li>Evaluated LEO satellite constellation resilience and Starlink space-based communications to enhance disaster situational awareness.</li>
             </ul>
         </div>
 
@@ -346,148 +345,32 @@
                 <li>Identified and reviewed CubeSat components and technical materials, gathering and organizing FCC-related supporting documents.</li>
             </ul>
         </div>
-        
-        <div class="card">
-            <div class="card-header">
-                <h3>Virginia Space Grant Consortium</h3>
-                <span class="date">Oct 2023 – Jun 2024</span>
-            </div>
-            <div class="subtitle">Space Law and Policy Specialist</div>
-            <ul>
-                <li>Served as the Space Law and Policy Specialist for Mission Integration during the Virginia Aerospace Science and Technology Scholars (VASTS) Summer Academy at NASA Langley.</li>
-                <li>Led approximately 50 scholars across four teams through the legal framework of aerospace missions.</li>
-            </ul>
-        </div>
-        
-        <div class="card">
-            <div class="card-header">
-                <h3>Macado's</h3>
-                <span class="date">Feb 2024 – Apr 2025</span>
-            </div>
-            <div class="subtitle">Deli Cook</div>
-            <ul>
-                <li>Awarded the MIT's Christiansburg Macado's Deli MVP award for outstanding performance during peak dining shifts.</li>
-                <li>Managed kitchen operations in a high-volume environment, ensuring strict health code compliance and efficient food preparation.</li>
-                <li>Coordinated a cross-functional culinary team to minimize ticket times, maintaining product consistency and enhancing overall customer satisfaction.</li>
-            </ul>
-        </div>
-        
-        <div class="card">
-            <div class="card-header">
-                <h3>Papa Johns</h3>
-                <span class="date">Jan 2024 – Feb 2024</span>
-            </div>
-            <div class="subtitle">Restaurant Crew Member</div>
-            <ul>
-                <li>Maintained composure and efficiency while managing multiple simultaneous orders and preparing food in a fast-paced environment.</li>
-                <li>Collaborated seamlessly with team members to deliver prompt customer service and uphold strict quality control standards during peak operational hours.</li>
-                <li>Managed front-of-house customer transactions while balancing back-of-house operational duties.</li>
-            </ul>
-        </div>
     </section>
 
     <section>
-        <h2 class="section-title">Projects & Research</h2>
-
+        <h2 class="section-title">Technical Skills</h2>
         <div class="card">
-            <div class="card-header">
-                <h3>Aerodynamic Design & Stability Analysis of a High-Efficiency Balsa Glider</h3>
-                <span class="date">Jan 2026 – May 2026</span>
+            <div class="tag-group">
+                <div class="tag-title">Software & Programming</div>
+                <ul class="tags">
+                    <li>SolidWorks</li>
+                    <li>AutoCAD</li>
+                    <li>Autodesk Inventor</li>
+                    <li>Ansys</li>
+                    <li>MATLAB</li>
+                    <li>Python</li>
+                    <li>Java</li>
+                </ul>
             </div>
-            <ul>
-                <li>Developed a high-performance balsa glider using a high-lift SG6043 wing and a symmetric NACA 0012 empennage.</li>
-                <li>Utilized MATLAB to conduct iterative longitudinal static stability analysis, ensuring a stable pitch stiffness and a natural trim at 7.34°.</li>
-                <li>Optimized the center of gravity relative to the wing's aerodynamic center to achieve a peak gliding efficiency (L/D) of 14.8.</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <h3>Starlink Sentinel: Autonomous LEO Collision Avoidance & State Estimation</h3>
-                <span class="date">May 2026</span>
+            <div class="tag-group" style="margin-top:20px;">
+                <div class="tag-title">Hardware & Testing</div>
+                <ul class="tags">
+                    <li>3D Printing (Bambu Lab P2S)</li>
+                    <li>CNC Machining</li>
+                    <li>Plasma / Laser Cutters</li>
+                    <li>Mecmesin Testing</li>
+                </ul>
             </div>
-            <ul>
-                <li>Engineered a 6-DOF orbital dynamics simulator with a custom Runge-Kutta 4th Order (RK4) numerical integrator, incorporating J2 gravitational perturbations.</li>
-                <li>Implemented an Extended Kalman Filter (EKF) computing analytical Jacobians to process simulated, noisy ground radar measurements into precise debris trajectory predictions.</li>
-                <li>Designed a closed-loop Proportional-Derivative (PD) control system simulating continuous low-thrust maneuvers for autonomous orbit-raising upon breaching safe-distance thresholds.</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <h3>The Martian Radiation Shielding Project</h3>
-                <span class="date">Jan 2026 – Apr 2026</span>
-            </div>
-            <ul>
-                <li>Evaluated materials like polyethylene and concrete to determine the most effective radiation shielding for long-term Martian habitat construction.</li>
-                <li>Demonstrated via computational modeling that polyethylene rapidly reduces radiation exposure to safe baseline levels at a minimal shield thickness of 7 cm.</li>
-            </ul>
-        </div>
-        
-        <div class="card">
-            <div class="card-header">
-                <h3>NotesQuiz.py</h3>
-                <span class="date">Jul 2025 – Aug 2025</span>
-            </div>
-            <ul>
-                <li>Developed a study tool in IntelliJ IDEA that parses user-uploaded .csv files containing questions and answers.</li>
-                <li>Programmed functionality to present randomized quizzes, track the user's grade throughout the session, and provide real-time feedback and final score summaries.</li>
-            </ul>
-        </div>
-        
-        <div class="card">
-            <div class="card-header">
-                <h3>Automated Data Filtration & Statistical Categorization Tool (MATLAB)</h3>
-                <span class="date">May 2025</span>
-            </div>
-            <ul>
-                <li>Developed a MATLAB data parsing script to extract and analyze raw text-based sales data.</li>
-                <li>Utilized logical indexing to clean the dataset by isolating valid entries from errors, calculating percentage breakdowns, total revenue, and reporting filtered errors.</li>
-            </ul>
-        </div>
-        
-        <div class="card">
-            <div class="card-header">
-                <h3>Water Quality Project (MATLAB)</h3>
-                <span class="date">Jan 2025 – May 2025</span>
-            </div>
-            <ul>
-                <li>Processed large datasets provided by Virginia Tech from local streams to identify and record low-pH spikes impacting aquatic life.</li>
-                <li>Implemented user-input validation to filter numerical entries (0-14) and generated automated visual trend analysis plotting stream data against healthy pH bounds (6.5–9).</li>
-            </ul>
-        </div>
-        
-        <div class="card">
-            <div class="card-header">
-                <h3>Water Quality pH Sensor Design & Prototyping</h3>
-                <span class="date">Jan 2025 – May 2025</span>
-            </div>
-            <ul>
-                <li>Collaborated with a team of six engineering students as Lead of Requirements to design, code, and build a functional pH sensor for the New River.</li>
-                <li>Utilized Autodesk Inventor to model the physical hardware housing and deployed MATLAB scripts for data acquisition and analysis of the retrieved sensor readings.</li>
-            </ul>
-        </div>
-        
-        <div class="card">
-            <div class="card-header">
-                <h3>2D Kinematic Trajectory Simulator (MATLAB)</h3>
-                <span class="date">Apr 2025</span>
-            </div>
-            <ul>
-                <li>Developed a MATLAB program utilizing a custom GUI to simulate the 2D kinematic trajectory of a projectile without air resistance.</li>
-                <li>Engineered the simulator to validate user inputs, support Imperial/Metric unit conversions, calculate real-time position/velocity vectors at 0.1-second intervals, and export formatted flight data.</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <h3>Space Law & Policy (STRIDE Mission)</h3>
-                <span class="date">Jun 2024</span>
-            </div>
-            <ul>
-                <li>Drafted a comprehensive legal and regulatory framework proposal for the STRIDE crewed Mars mission, establishing compliance guidelines based on the Outer Space Treaty and Artemis Accords.</li>
-                <li>Outlined strict planetary protection protocols, detailed nuclear thermal propulsion safety requirements, and defined human risk assessments including acceptable radiation exposure limits.</li>
-            </ul>
         </div>
     </section>
 
