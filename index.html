@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan M. Epperly | Aerospace Engineering</title>
+    <style>
+        :root {
+            --primary: #003366;
+            --secondary: #e65c00;
+            --bg-color: #f4f7f6;
+            --text-main: #333;
+            --card-bg: #ffffff;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--secondary);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            font-weight: 300;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            color: var(--primary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        .date-location {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 0;
+            list-style: none;
+        }
+        .skills-list li {
+            background: #e9ecef;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Ryan M. Epperly</h1>
+    <p>Aerospace Engineering | Dynamics, Control, & Estimation</p>
+</header>
+
+<div class="container">
+    
+    <section>
+        <h2 class="section-title">About Me</h2>
+        <p>I am an Aerospace Engineering undergraduate at Virginia Tech pursuing a minor in Mathematics, with an academic specialization in Dynamics, Control, and Estimation. My core focus lies in space vehicle dynamics, astrodynamics, orbital mechanics, and structural mechanics.</p>
+    </section>
+
+    <section>
+        <h2 class="section-title">Technical Projects</h2>
+        
+        <div class="card">
+            <h3>Starlink Sentinel: Autonomous LEO Collision Avoidance</h3>
+            <div class="date-location">May 2026</div>
+            <p>Developed a custom orbital dynamics simulation project focused on evaluating and managing autonomous collision avoidance parameters for satellite constellations in Low Earth Orbit.</p>
+        </div>
+
+        <div class="card">
+            <h3>Martian Habitat Radiation Shielding Simulation</h3>
+            <div class="date-location">Spring 2026</div>
+            <p>Designed a computational physics research project utilizing MATLAB to evaluate material radiation shielding efficiency for long-duration habitats on Mars, focusing on simulation design and material analysis.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Experience</h2>
+
+        <div class="card">
+            <h3>Space Systems Intern</h3>
+            <div class="date-location">GEOINT ISAC Summer Security Resilience Program (SpaceX & NASA Cohort) | May 2026 – Aug 2026</div>
+            <p>Completed project assignments involving satellite constellation vulnerability assessments and geospatial meteorological risk analysis.</p>
+        </div>
+
+        <div class="card">
+            <h3>Engineering Intern</h3>
+            <div class="date-location">Butler Parachute Systems | Roanoke, VA | May 2026 – Aug 2026</div>
+            <p>Executed on-site technical roles focusing on component quality-control testing, mechanical design, and technical writing.</p>
+        </div>
+        
+        <div class="card">
+            <h3>Regulatory Engineering Intern</h3>
+            <div class="date-location">Blackwing Space | Mar 2026 – Aug 2026</div>
+            <p>Tracked aerospace satellite configurations and maintained strict licensing compliance protocols.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="card">
+            <ul class="skills-list">
+                <li>MATLAB</li>
+                <li>SolidWorks</li>
+                <li>AutoCAD</li>
+                <li>Autodesk Inventor</li>
+                <li>Fusion 360</li>
+                <li>3D Printing (Bambu Lab P2S)</li>
+                <li>Rapid Prototyping</li>
+            </ul>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
