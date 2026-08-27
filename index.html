@@ -127,9 +127,58 @@
         }
 
         .card:hover {
-            transform: translateY(-4px);
             border-color: var(--accent-color);
             box-shadow: 0 10px 30px var(--border-glow);
+        }
+
+        /* Interactive Accordion Styling */
+        details {
+            background: var(--card-bg);
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #1e293b;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            transition: all 0.3s ease;
+        }
+
+        details:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 30px var(--border-glow);
+        }
+
+        summary {
+            padding: 20px 30px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #f8fafc;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            color: var(--accent-color);
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+
+        details[open] summary::after {
+            content: '−';
+        }
+
+        .details-content {
+            padding: 0 30px 30px 30px;
+            border-top: 1px solid #1e293b;
+            margin-top: 10px;
+            padding-top: 20px;
         }
 
         .card-header {
@@ -140,14 +189,14 @@
             margin-bottom: 5px;
         }
 
-        .card h3 {
+        .card h3, .details-content h3 {
             margin: 0;
             color: #f8fafc;
             font-size: 1.3rem;
             font-weight: 700;
         }
 
-        .card .subtitle {
+        .subtitle {
             font-weight: 600;
             color: var(--accent-color);
             font-size: 1.05rem;
@@ -162,6 +211,8 @@
             padding: 4px 12px;
             border-radius: 4px;
             border: 1px solid rgba(56, 189, 248, 0.2);
+            display: inline-block;
+            margin-bottom: 10px;
         }
 
         ul {
@@ -186,10 +237,6 @@
 
         .tag-group {
             margin-bottom: 20px;
-        }
-
-        .tag-group:last-child {
-            margin-bottom: 0;
         }
 
         .tag-title {
@@ -225,17 +272,20 @@
             color: #020617;
         }
 
-        .img-right {
+        /* Standardized Logo Styling for Dark Theme */
+        .img-logo {
             float: right;
             margin: 0 0 15px 20px;
+            max-width: 110px;
+            background: #ffffff; /* Gives dark logos a clean white box */
+            padding: 8px;
             border-radius: 8px;
-            max-width: 100px;
+            border: 1px solid #334155;
         }
 
         .img-patch {
             border-radius: 50%;
-            border: 2px solid var(--accent-color);
-            background: #ffffff;
+            padding: 4px;
         }
 
         footer {
@@ -270,22 +320,23 @@
     <section>
         <h2 class="section-title">Education</h2>
         <div class="card">
-            <img src="images/VT-LOGO.webp" alt="Virginia Tech Logo" class="img-right">
+            <img src="images/Virginia Tech Logo.jpg" alt="Virginia Tech Logo" class="img-logo">
             <div class="card-header">
                 <h3>Virginia Tech</h3>
-                <span class="date">Jan 2026 – May 2028</span>
             </div>
             <div class="subtitle">Bachelor of Science in Aerospace Engineering</div>
-            <p style="margin: 10px 0 0;"><strong>Specialization:</strong> Dynamics, Control, and Estimation | <strong>Minor:</strong> Mathematics</p>
+            <span class="date" style="margin-top: 10px;">Jan 2026 – May 2028</span>
+            <p style="margin: 5px 0 0;"><strong>Specialization:</strong> Dynamics, Control, and Estimation | <strong>Minor:</strong> Mathematics</p>
         </div>
 
         <div class="card">
+            <img src="images/NRCCwebp.webp" alt="NRCC Logo" class="img-logo">
             <div class="card-header">
                 <h3>New River Community College</h3>
-                <span class="date">Aug 2024 – Dec 2025</span>
             </div>
             <div class="subtitle">Associate of Science (A.S.), Engineering</div>
-            <p style="margin: 10px 0 0;">Graduated Magna Cum Laude</p>
+            <span class="date" style="margin-top: 10px;">Aug 2024 – Dec 2025</span>
+            <p style="margin: 5px 0 0;">Graduated Magna Cum Laude</p>
         </div>
     </section>
     
@@ -294,8 +345,8 @@
         <div class="card">
             <div class="card-header">
                 <h3>Radio Wave Propagation</h3>
-                <span class="date">Aug 21, 2026</span>
             </div>
+            <span class="date" style="margin-top: 10px;">Aug 21, 2026</span>
             <ul>
                 <li>Successfully completed the online learning course "Radio Wave Propagation".</li>
                 <li>Issued by the University Corporation for Atmospheric Research's The COMET® Program.</li>
@@ -308,43 +359,45 @@
     <section>
         <h2 class="section-title">Engineering Experience</h2>
 
-        <div class="card">
-            <div class="card-header">
-                <h3>Butler Parachute Systems, Inc.</h3>
+        <!-- Interactive Accordion 1 (Open by default) -->
+        <details open>
+            <summary>Engineering Intern | Butler Parachute Systems</summary>
+            <div class="details-content">
+                <img src="images/ButlerParachutes.webp" alt="Butler Parachute Systems Logo" class="img-logo">
                 <span class="date">May 2026 – Aug 2026</span>
+                <ul>
+                    <li>Designed a line continuity tool in SolidWorks, optimizing geometry to eliminate sharp edges and prevent cord snagging.</li>
+                    <li>Executed 150+ Mecmesin/hydraulic tensile tests and performed 10 operational drop tests with a custom load cell amplifier enclosure.</li>
+                    <li>Engineered a quality control program referencing PIA documents and MIL-STD-849D, improving inspection efficiency by 20%.</li>
+                </ul>
             </div>
-            <div class="subtitle">Engineering Intern</div>
-            <ul>
-                <li>Designed a line continuity tool in SolidWorks, optimizing geometry to eliminate sharp edges and prevent cord snagging.</li>
-                <li>Executed 150+ Mecmesin/hydraulic tensile tests and performed 10 operational drop tests with a custom load cell amplifier enclosure.</li>
-                <li>Engineered a quality control program referencing PIA documents and MIL-STD-849D, improving inspection efficiency by 20%.</li>
-            </ul>
-        </div>
+        </details>
 
-        <div class="card">
-           <img src="images/Screenshot 2026-08-27 131325.png" alt="GEOINT ISAC Patch" class="img-right img-patch">
-            <div class="card-header">
-                <h3>International Association of Certified ISAOs (IACI) / GEOINT ISAC</h3>
+        <!-- Interactive Accordion 2 -->
+        <details>
+            <summary>Space Systems Intern | GEOINT ISAC</summary>
+            <div class="details-content">
+                <img src="images/Screenshot 2026-08-27 131325.png" alt="GEOINT ISAC Patch" class="img-logo img-patch">
                 <span class="date">May 2026 – Aug 2026</span>
+                <ul>
+                    <li>Collaborated with NASA to conduct research on critical infrastructure resilience and geospatial risk factors, authoring technical papers on climate-induced aviation density altitude penalties.</li>
+                    <li>Evaluated LEO satellite constellation resilience and Starlink space-based communications to enhance disaster situational awareness.</li>
+                </ul>
             </div>
-            <div class="subtitle">Space Systems Intern</div>
-            <ul>
-                <li>Collaborated with NASA to conduct research on critical infrastructure resilience and geospatial risk factors, authoring technical papers on climate-induced aviation density altitude penalties.</li>
-                <li>Evaluated LEO satellite constellation resilience and Starlink space-based communications to enhance disaster situational awareness.</li>
-            </ul>
-        </div>
+        </details>
 
-        <div class="card">
-            <div class="card-header">
-                <h3>Blackwing Space</h3>
+        <!-- Interactive Accordion 3 -->
+        <details>
+            <summary>Regulatory Engineering Intern | Blackwing Space</summary>
+            <div class="details-content">
+                <img src="images/Blackwing.jpg" alt="Blackwing Space Logo" class="img-logo">
                 <span class="date">Mar 2026 – Aug 2026</span>
+                <ul>
+                    <li>Researched CubeSat systems, subsystems, mission requirements, and supporting regulatory documentation.</li>
+                    <li>Identified and reviewed CubeSat components and technical materials, gathering and organizing FCC-related supporting documents.</li>
+                </ul>
             </div>
-            <div class="subtitle">Regulatory Engineering Intern</div>
-            <ul>
-                <li>Researched CubeSat systems, subsystems, mission requirements, and supporting regulatory documentation.</li>
-                <li>Identified and reviewed CubeSat components and technical materials, gathering and organizing FCC-related supporting documents.</li>
-            </ul>
-        </div>
+        </details>
     </section>
 
     <section>
