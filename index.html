@@ -158,60 +158,13 @@
             transition: all 0.3s ease;
             border: 1px solid #1e293b;
             overflow: hidden;
+            position: relative;
         }
 
         .card:hover {
             border-color: var(--accent-color);
             box-shadow: 0 10px 30px var(--border-glow);
-        }
-
-        details {
-            background: var(--card-bg);
-            border-radius: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #1e293b;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-            transition: all 0.3s ease;
-        }
-
-        details:hover {
-            border-color: var(--accent-color);
-            box-shadow: 0 10px 30px var(--border-glow);
-        }
-
-        summary {
-            padding: 20px 30px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #f8fafc;
-            cursor: pointer;
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background 0.3s ease;
-        }
-
-        summary::-webkit-details-marker {
-            display: none;
-        }
-
-        summary::after {
-            content: '+';
-            color: var(--accent-color);
-            font-size: 1.8rem;
-            line-height: 1;
-        }
-
-        details[open] summary::after {
-            content: '−';
-        }
-
-        .details-content {
-            padding: 0 30px 30px 30px;
-            border-top: 1px solid #1e293b;
-            margin-top: 10px;
-            padding-top: 20px;
+            transform: translateY(-2px);
         }
 
         .card-header {
@@ -222,10 +175,10 @@
             margin-bottom: 5px;
         }
 
-        .card h3, .details-content h3 {
+        .card h3 {
             margin: 0;
             color: #f8fafc;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 700;
         }
 
@@ -268,6 +221,84 @@
             text-decoration: underline;
         }
 
+        /* Contextual Mini-Tags for Cards */
+        .card-skills {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            border-top: 1px solid #1e293b;
+            padding-top: 15px;
+        }
+
+        .mini-tag {
+            background: rgba(56, 189, 248, 0.05);
+            color: #7dd3fc;
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Interactive Accordion Styling (Reserved for secondary info) */
+        details {
+            background: var(--card-bg);
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #1e293b;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            transition: all 0.3s ease;
+        }
+
+        details:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 30px var(--border-glow);
+        }
+
+        summary {
+            padding: 20px 30px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #f8fafc;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            color: var(--accent-color);
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+
+        details[open] summary::after {
+            content: '−';
+        }
+
+        .details-content {
+            padding: 0 30px 30px 30px;
+            border-top: 1px solid #1e293b;
+            margin-top: 10px;
+            padding-top: 20px;
+        }
+
+        .details-content h3 {
+            margin: 0;
+            color: #f8fafc;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        /* Standardized Tag Groups for Bottom Skills Section */
         .tag-group {
             margin-bottom: 20px;
         }
@@ -305,7 +336,6 @@
             color: #020617;
         }
 
-        /* Updated to remove white background box */
         .img-logo {
             float: right;
             margin: 0 0 15px 20px;
@@ -332,9 +362,9 @@
 <nav>
     <a href="#education">Education</a>
     <a href="#experience">Experience</a>
-    <a href="#extracurriculars">Extracurriculars</a>
-    <a href="#projects">Projects & Research</a>
-    <a href="#awards">Honors & Awards</a>
+    <a href="#extracurriculars">Leadership</a>
+    <a href="#projects">Projects</a>
+    <a href="#awards">Honors</a>
     <a href="#volunteering">Volunteering</a>
     <a href="#certifications">Certifications</a>
     <a href="#skills">Skills</a>
@@ -383,92 +413,106 @@
     <section id="experience">
         <h2 class="section-title">Engineering Experience</h2>
 
-        <details open>
-            <summary>Engineering Intern | Butler Parachute Systems</summary>
-            <div class="details-content">
-                <img src="images/ButlerParachutes.webp" alt="Butler Parachute Systems Logo" class="img-logo">
-                <span class="date">May 2026 – Aug 2026</span>
-                <ul>
-                    <li>Designed a line continuity tool in SolidWorks, optimizing geometry to eliminate sharp edges and prevent cord snagging.</li>
-                    <li>Executed 150+ Mecmesin/hydraulic tensile tests and performed 10 operational drop tests with a custom load cell amplifier enclosure.</li>
-                    <li>Engineered a quality control program referencing PIA documents and MIL-STD-849D, improving inspection efficiency by 20%.</li>
-                </ul>
+        <div class="card">
+            <img src="images/ButlerParachutes.webp" alt="Butler Parachute Systems Logo" class="img-logo">
+            <div class="card-header">
+                <h3>Engineering Intern</h3>
             </div>
-        </details>
+            <div class="subtitle">Butler Parachute Systems</div>
+            <span class="date" style="margin-top: 10px;">May 2026 – Aug 2026</span>
+            <ul>
+                <li>Designed a line continuity tool in SolidWorks, optimizing geometry to eliminate sharp edges and prevent cord snagging.</li>
+                <li>Executed 150+ Mecmesin/hydraulic tensile tests and performed 10 operational drop tests with a custom load cell amplifier enclosure.</li>
+                <li>Engineered a quality control program referencing PIA documents and MIL-STD-849D, improving inspection efficiency by 20%.</li>
+            </ul>
+            <div class="card-skills">
+                <span class="mini-tag">SolidWorks</span>
+                <span class="mini-tag">Mecmesin Testing</span>
+                <span class="mini-tag">MIL-STD-849D</span>
+                <span class="mini-tag">Quality Control</span>
+            </div>
+        </div>
 
-        <details>
-            <summary>Space Systems Intern | GEOINT ISAC</summary>
-            <div class="details-content">
-                <img src="images/Screenshot 2026-08-27 131325.png" alt="GEOINT ISAC Patch" class="img-logo img-patch">
-                <span class="date">May 2026 – Aug 2026</span>
-                <ul>
-                    <li>Collaborated with NASA to conduct research on critical infrastructure resilience and geospatial risk factors, authoring technical papers on climate-induced aviation density altitude penalties.</li>
-                    <li>Evaluated LEO satellite constellation resilience and Starlink space-based communications to enhance disaster situational awareness.</li>
-                </ul>
+        <div class="card">
+            <img src="images/Screenshot 2026-08-27 131325.png" alt="GEOINT ISAC Patch" class="img-logo img-patch">
+            <div class="card-header">
+                <h3>Space Systems Intern</h3>
             </div>
-        </details>
+            <div class="subtitle">GEOINT ISAC</div>
+            <span class="date" style="margin-top: 10px;">May 2026 – Aug 2026</span>
+            <ul>
+                <li>Collaborated with NASA to conduct research on critical infrastructure resilience and geospatial risk factors, authoring technical papers on climate-induced aviation density altitude penalties.</li>
+                <li>Evaluated LEO satellite constellation resilience and Starlink space-based communications to enhance disaster situational awareness.</li>
+            </ul>
+            <div class="card-skills">
+                <span class="mini-tag">LEO Constellations</span>
+                <span class="mini-tag">Geospatial Intelligence</span>
+                <span class="mini-tag">Risk Assessment</span>
+                <span class="mini-tag">OSINT</span>
+            </div>
+        </div>
 
-        <details>
-            <summary>Regulatory Engineering Intern | Blackwing Space</summary>
-            <div class="details-content">
-                <img src="images/Blackwing.jpg" alt="Blackwing Space Logo" class="img-logo">
-                <span class="date">Mar 2026 – Aug 2026</span>
-                <ul>
-                    <li>Researched CubeSat systems, subsystems, mission requirements, and supporting regulatory documentation.</li>
-                    <li>Identified and reviewed CubeSat components and technical materials, gathering and organizing FCC-related supporting documents.</li>
-                </ul>
+        <div class="card">
+            <img src="images/Blackwing.jpg" alt="Blackwing Space Logo" class="img-logo">
+            <div class="card-header">
+                <h3>Regulatory Engineering Intern</h3>
             </div>
-        </details>
+            <div class="subtitle">Blackwing Space</div>
+            <span class="date" style="margin-top: 10px;">Mar 2026 – Aug 2026</span>
+            <ul>
+                <li>Researched CubeSat systems, subsystems, mission requirements, and supporting regulatory documentation.</li>
+                <li>Identified and reviewed CubeSat components and technical materials, gathering and organizing FCC-related supporting documents.</li>
+            </ul>
+            <div class="card-skills">
+                <span class="mini-tag">CubeSat Systems</span>
+                <span class="mini-tag">Aerospace Regulations</span>
+                <span class="mini-tag">FCC Compliance</span>
+            </div>
+        </div>
     </section>
 
     <section id="extracurriculars">
         <h2 class="section-title">Extracurriculars & Leadership</h2>
         
-        <details open>
-            <summary>Space Law & Policy Specialist | Virginia Aerospace Science & Technology Scholars</summary>
-            <div class="details-content">
-                <span class="date">Summer Academy at NASA Langley</span>
-                <ul>
-                    <li>Participated in an online portion of the program alongside approximately 500 selected scholars.</li>
-                    <li>Hand-selected as one of ~180 students to participate in the immersive summer academy portion at NASA Langley.</li>
-                    <li>Served as the Space Law and Policy Specialist for Mission Integration, leading approximately 50 scholars across four teams through the legal framework of aerospace.</li>
-                </ul>
+        <div class="card">
+            <div class="card-header">
+                <h3>Space Law & Policy Specialist</h3>
             </div>
-        </details>
+            <div class="subtitle">Virginia Aerospace Science & Technology Scholars (NASA Langley)</div>
+            <ul>
+                <li>Participated in an online portion of the program alongside approximately 500 selected scholars.</li>
+                <li>Hand-selected as one of ~180 students to participate in the immersive summer academy portion at NASA Langley.</li>
+                <li>Served as the Space Law and Policy Specialist for Mission Integration, leading approximately 50 scholars across four teams through the legal framework of aerospace.</li>
+            </ul>
+            <div class="card-skills">
+                <span class="mini-tag">Space Law & Policy</span>
+                <span class="mini-tag">Mission Integration</span>
+                <span class="mini-tag">Team Leadership</span>
+            </div>
+        </div>
 
-        <details>
-            <summary>Commissioner of Revenue | Virginia Boys State</summary>
-            <div class="details-content">
-                <div class="subtitle">The American Legion</div>
-                <span class="date">Jun 2023</span>
-                <ul>
-                    <li>Elected by peers in Burke City to manage tax policies and revenue generation for the simulated city of Burke.</li>
-                    <li>Collaborated with the city council and state officials to allocate funds and balance the municipal budget.</li>
-                </ul>
+        <div class="card">
+            <div class="card-header">
+                <h3>Commissioner of Revenue</h3>
             </div>
-        </details>
+            <div class="subtitle">Virginia Boys State (The American Legion)</div>
+            <span class="date" style="margin-top: 10px;">Jun 2023</span>
+            <ul>
+                <li>Elected by peers in Burke City to manage tax policies and revenue generation for the simulated city of Burke.</li>
+                <li>Collaborated with the city council and state officials to allocate funds and balance the municipal budget.</li>
+            </ul>
+        </div>
 
-        <details>
-            <summary>Student Member | American Institute of Aeronautics and Astronautics (AIAA)</summary>
-            <div class="details-content">
-                <div class="subtitle">Virginia Tech Chapter</div>
-                <span class="date">May 2026 – Present</span>
-                <ul>
-                    <li>Engaging with aerospace professionals and actively preparing to participate in aircraft design competitions such as Design/Build/Fly (DBF) in Fall 2026.</li>
-                </ul>
+        <div class="card">
+            <div class="card-header">
+                <h3>Student Member</h3>
             </div>
-        </details>
-
-        <details>
-            <summary>Member | National FFA Organization</summary>
-            <div class="details-content">
-                <div class="subtitle">Eastern Montgomery High School Chapter</div>
-                <span class="date">Aug 2023 – May 2024</span>
-                <ul>
-                    <li>Participated in chapter activities and community initiatives, developing foundational skills in leadership, teamwork, and project management.</li>
-                </ul>
-            </div>
-        </details>
+            <div class="subtitle">American Institute of Aeronautics and Astronautics (AIAA)</div>
+            <span class="date" style="margin-top: 10px;">May 2026 – Present</span>
+            <ul>
+                <li>Engaging with aerospace professionals and actively preparing to participate in aircraft design competitions such as Design/Build/Fly (DBF) in Fall 2026.</li>
+            </ul>
+        </div>
     </section>
 
     <section id="projects">
@@ -484,6 +528,12 @@
                 <li>Engineered a computational physics simulation in MATLAB to track orbital trajectories.</li>
                 <li>Defined parameters for collision avoidance protocols in Low Earth Orbit (LEO) environments.</li>
             </ul>
+            <div class="card-skills">
+                <span class="mini-tag">MATLAB</span>
+                <span class="mini-tag">Orbital Mechanics</span>
+                <span class="mini-tag">State Estimation</span>
+                <span class="mini-tag">Extended Kalman Filters</span>
+            </div>
         </div>
 
         <div class="card">
@@ -496,77 +546,46 @@
                 <li>Evaluated material radiation shielding efficiency for long-duration space habitats using MATLAB.</li>
                 <li>Analyzed varying material densities and simulated radiation penetration metrics.</li>
             </ul>
+            <div class="card-skills">
+                <span class="mini-tag">MATLAB</span>
+                <span class="mini-tag">Computational Physics</span>
+                <span class="mini-tag">Material Properties</span>
+            </div>
         </div>
     </section>
 
     <section id="awards">
         <h2 class="section-title">Honors & Awards</h2>
         
-        <details>
-            <summary>Ray E. and Mary B. Epperly Family Fund Scholarship</summary>
-            <div class="details-content">
-                <div class="subtitle">Community Foundation of the New River Valley</div>
-                <span class="date">May 2024</span>
-                <ul>
-                    <li>Awarded in recognition of academic integrity, scholastic excellence, and dedication to engineering studies.</li>
-                </ul>
+        <div class="card">
+            <div class="card-header">
+                <h3>Ray E. and Mary B. Epperly Family Fund Scholarship</h3>
             </div>
-        </details>
+            <div class="subtitle">Community Foundation of the New River Valley</div>
+            <span class="date" style="margin-top: 10px;">May 2024</span>
+            <p style="margin: 5px 0 0;">Awarded in recognition of academic integrity, scholastic excellence, and dedication to engineering studies.</p>
+        </div>
 
-        <details>
-            <summary>Steel Dynamics Scholarship</summary>
-            <div class="details-content">
-                <div class="subtitle">Steel Dynamics, Inc.</div>
-                <span class="date">May 2024</span>
-                <ul>
-                    <li>Awarded to support undergraduate studies based on excellent academic achievement.</li>
-                </ul>
+        <div class="card">
+            <div class="card-header">
+                <h3>Steel Dynamics Scholarship</h3>
             </div>
-        </details>
+            <div class="subtitle">Steel Dynamics, Inc.</div>
+            <span class="date" style="margin-top: 10px;">May 2024</span>
+            <p style="margin: 5px 0 0;">Awarded to support undergraduate studies based on excellent academic achievement.</p>
+        </div>
 
-        <details>
-            <summary>President’s Award for Educational Excellence</summary>
-            <div class="details-content">
-                <div class="subtitle">U.S. Department of Education</div>
-                <span class="date">May 2024</span>
-                <ul>
-                    <li>Recognized for outstanding academic excellence, maintaining a high cumulative grade point average, and demonstrating a commitment to rigorous coursework.</li>
-                </ul>
+        <div class="card">
+            <div class="card-header">
+                <h3>President’s Award for Educational Excellence</h3>
             </div>
-        </details>
-
-        <details>
-            <summary>Frank E. Page Educational Fund Scholarship</summary>
-            <div class="details-content">
-                <div class="subtitle">Bank of America (Trustee)</div>
-                <span class="date">May 2024</span>
-                <ul>
-                    <li>Awarded in recognition of academic excellence and scholastic potential as a graduate from the Montgomery County public school system.</li>
-                </ul>
-            </div>
-        </details>
-
-        <details>
-            <summary>Eastmont Community Foundation (ECF) Scholarship</summary>
-            <div class="details-content">
-                <span class="date">May 2024</span>
-                <ul>
-                    <li>Awarded the Eastern Montgomery Fund Scholarship in recognition of academic excellence and a demonstrated commitment to the local community.</li>
-                </ul>
-            </div>
-        </details>
-
-        <details>
-            <summary>Senior of the Month</summary>
-            <div class="details-content">
-                <div class="subtitle">Eastern Montgomery High School</div>
-                <span class="date">Jan 2024</span>
-                <ul>
-                    <li>Selected for demonstrating strong performance both in the classroom and through contributions to extracurricular and community activities, particularly in STEM.</li>
-                </ul>
-            </div>
-        </details>
+            <div class="subtitle">U.S. Department of Education</div>
+            <span class="date" style="margin-top: 10px;">May 2024</span>
+            <p style="margin: 5px 0 0;">Recognized for outstanding academic excellence, maintaining a high cumulative grade point average, and demonstrating a commitment to rigorous coursework.</p>
+        </div>
     </section>
+
+    <!-- Accordions used below this line to save vertical space and prevent scrolling fatigue -->
 
     <section id="volunteering">
         <h2 class="section-title">Volunteering</h2>
