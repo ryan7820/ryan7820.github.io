@@ -41,12 +41,16 @@
             z-index: 1000;
             border-bottom: 1px solid #1e293b;
             box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         nav a {
             color: var(--text-main);
             text-decoration: none;
-            margin: 0 15px;
+            margin: 0 10px;
             font-size: 0.95rem;
             font-weight: 600;
             transition: color 0.3s ease;
@@ -316,16 +320,6 @@
             padding: 4px;
         }
 
-        .img-portfolio, .img-cert {
-            display: block;
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            border: 1px solid #334155;
-            margin: 20px 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-
         footer {
             text-align: center;
             padding: 50px 20px;
@@ -341,7 +335,9 @@
 <nav>
     <a href="#education">Education</a>
     <a href="#experience">Experience</a>
-    <a href="#projects">Projects/Research</a>
+    <a href="#extracurriculars">Extracurriculars</a>
+    <a href="#projects">Projects & Research</a>
+    <a href="#awards">Honors & Awards</a>
     <a href="#volunteering">Volunteering</a>
     <a href="#certifications">Certifications</a>
     <a href="#skills">Skills</a>
@@ -428,6 +424,56 @@
         </details>
     </section>
 
+    <section id="extracurriculars">
+        <h2 class="section-title">Extracurriculars & Leadership</h2>
+        
+        <details open>
+            <summary>Space Law & Policy Specialist | Virginia Aerospace Science & Technology Scholars</summary>
+            <div class="details-content">
+                <span class="date">Summer Academy at NASA Langley</span>
+                <ul>
+                    <li>Participated in an online portion of the program alongside approximately 500 selected scholars.</li>
+                    <li>Hand-selected as one of ~180 students to participate in the immersive summer academy portion at NASA Langley.</li>
+                    <li>Served as the Space Law and Policy Specialist for Mission Integration, leading approximately 50 scholars across four teams through the legal framework of aerospace.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Commissioner of Revenue | Virginia Boys State</summary>
+            <div class="details-content">
+                <div class="subtitle">The American Legion</div>
+                <span class="date">Jun 2023</span>
+                <ul>
+                    <li>Elected by peers in Burke City to manage tax policies and revenue generation for the simulated city of Burke.</li>
+                    <li>Collaborated with the city council and state officials to allocate funds and balance the municipal budget.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Student Member | American Institute of Aeronautics and Astronautics (AIAA)</summary>
+            <div class="details-content">
+                <div class="subtitle">Virginia Tech Chapter</div>
+                <span class="date">May 2026 – Present</span>
+                <ul>
+                    <li>Engaging with aerospace professionals and actively preparing to participate in aircraft design competitions such as Design/Build/Fly (DBF) in Fall 2026.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Member | National FFA Organization</summary>
+            <div class="details-content">
+                <div class="subtitle">Eastern Montgomery High School Chapter</div>
+                <span class="date">Aug 2023 – May 2024</span>
+                <ul>
+                    <li>Participated in chapter activities and community initiatives, developing foundational skills in leadership, teamwork, and project management.</li>
+                </ul>
+            </div>
+        </details>
+    </section>
+
     <section id="projects">
         <h2 class="section-title">Academic & Research Projects</h2>
         
@@ -454,6 +500,75 @@
                 <li>Analyzed varying material densities and simulated radiation penetration metrics.</li>
             </ul>
         </div>
+    </section>
+
+    <section id="awards">
+        <h2 class="section-title">Honors & Awards</h2>
+        
+        <details>
+            <summary>Ray E. and Mary B. Epperly Family Fund Scholarship</summary>
+            <div class="details-content">
+                <div class="subtitle">Community Foundation of the New River Valley</div>
+                <span class="date">May 2024</span>
+                <ul>
+                    <li>Awarded in recognition of academic integrity, scholastic excellence, and dedication to engineering studies.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Steel Dynamics Scholarship</summary>
+            <div class="details-content">
+                <div class="subtitle">Steel Dynamics, Inc.</div>
+                <span class="date">May 2024</span>
+                <ul>
+                    <li>Awarded to support undergraduate studies based on excellent academic achievement.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>President’s Award for Educational Excellence</summary>
+            <div class="details-content">
+                <div class="subtitle">U.S. Department of Education</div>
+                <span class="date">May 2024</span>
+                <ul>
+                    <li>Recognized for outstanding academic excellence, maintaining a high cumulative grade point average, and demonstrating a commitment to rigorous coursework.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Frank E. Page Educational Fund Scholarship</summary>
+            <div class="details-content">
+                <div class="subtitle">Bank of America (Trustee)</div>
+                <span class="date">May 2024</span>
+                <ul>
+                    <li>Awarded in recognition of academic excellence and scholastic potential as a graduate from the Montgomery County public school system.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Eastmont Community Foundation (ECF) Scholarship</summary>
+            <div class="details-content">
+                <span class="date">May 2024</span>
+                <ul>
+                    <li>Awarded the Eastern Montgomery Fund Scholarship in recognition of academic excellence and a demonstrated commitment to the local community.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Senior of the Month</summary>
+            <div class="details-content">
+                <div class="subtitle">Eastern Montgomery High School</div>
+                <span class="date">Jan 2024</span>
+                <ul>
+                    <li>Selected for demonstrating strong performance both in the classroom and through contributions to extracurricular and community activities, particularly in STEM.</li>
+                </ul>
+            </div>
+        </details>
     </section>
 
     <section id="volunteering">
@@ -634,24 +749,53 @@
         <h2 class="section-title">Technical Skills</h2>
         <div class="card">
             <div class="tag-group">
+                <div class="tag-title">Aerospace & Dynamics</div>
+                <ul class="tags">
+                    <li>Orbital Mechanics</li>
+                    <li>State Estimation</li>
+                    <li>Extended Kalman Filters (EKF)</li>
+                    <li>Guidance Navigation & Control (GNC)</li>
+                    <li>Aerodynamics</li>
+                    <li>Longitudinal Static Stability Analysis</li>
+                    <li>Aircraft Trim & Equilibrium</li>
+                </ul>
+            </div>
+            <div class="tag-group">
                 <div class="tag-title">Software & Programming</div>
+                <ul class="tags">
+                    <li>MATLAB</li>
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>GNU Octave</li>
+                </ul>
+            </div>
+            <div class="tag-group">
+                <div class="tag-title">CAD, Simulation & FEA</div>
                 <ul class="tags">
                     <li>SolidWorks</li>
                     <li>AutoCAD</li>
                     <li>Autodesk Inventor</li>
                     <li>Fusion 360</li>
-                    <li>Ansys</li>
-                    <li>MATLAB</li>
-                    <li>Python</li>
-                    <li>Java</li>
+                    <li>Ansys (Topology Optimization)</li>
                 </ul>
             </div>
-            <div class="tag-group" style="margin-top:20px;">
+            <div class="tag-group">
+                <div class="tag-title">Systems & Compliance</div>
+                <ul class="tags">
+                    <li>Safety Management Systems (SMS)</li>
+                    <li>Aerospace Regulations</li>
+                    <li>Risk Assessment</li>
+                    <li>Interagency Systems Coordination</li>
+                    <li>Open-Source Intelligence (OSINT)</li>
+                </ul>
+            </div>
+            <div class="tag-group">
                 <div class="tag-title">Hardware & Testing</div>
                 <ul class="tags">
                     <li>3D Printing (Bambu Lab P2S)</li>
                     <li>CNC Machining</li>
-                    <li>Mecmesin Testing</li>
+                    <li>Mecmesin Tensile Testing</li>
+                    <li>Environmental Instrumentation</li>
                 </ul>
             </div>
         </div>
