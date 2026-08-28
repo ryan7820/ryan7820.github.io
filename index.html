@@ -89,9 +89,9 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 15px;
             margin-bottom: 30px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 500;
         }
 
@@ -103,6 +103,10 @@
 
         .contact-bar a:hover {
             color: var(--accent-color);
+        }
+
+        .contact-bar span.bullet {
+            color: #334155;
         }
 
         .btn {
@@ -182,11 +186,30 @@
             font-weight: 700;
         }
 
+        .card h3 a {
+            color: #f8fafc;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .card h3 a:hover {
+            color: var(--accent-color);
+        }
+
         .subtitle {
             font-weight: 600;
             color: var(--accent-color);
             font-size: 1.05rem;
             margin-top: 5px;
+        }
+
+        .subtitle a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .subtitle a:hover {
+            text-decoration: underline;
         }
 
         .date {
@@ -221,7 +244,6 @@
             text-decoration: underline;
         }
 
-        /* Contextual Mini-Tags for Cards */
         .card-skills {
             margin-top: 20px;
             display: flex;
@@ -242,7 +264,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* Interactive Accordion Styling (Reserved for secondary info) */
         details {
             background: var(--card-bg);
             border-radius: 12px;
@@ -298,7 +319,6 @@
             font-weight: 700;
         }
 
-        /* Standardized Tag Groups for Bottom Skills Section */
         .tag-group {
             margin-bottom: 20px;
         }
@@ -336,15 +356,21 @@
             color: #020617;
         }
 
+        /* Dark Mode Logo Transparency Hack */
         .img-logo {
             float: right;
             margin: 0 0 15px 20px;
             max-width: 110px;
             background: transparent;
+            /* This turns white backgrounds transparent, and flips black logos to white */
+            mix-blend-mode: screen; 
+            filter: grayscale(1) invert(1) brightness(2);
         }
 
         .img-patch {
             border-radius: 50%;
+            mix-blend-mode: normal;
+            filter: none;
         }
 
         footer {
@@ -375,12 +401,16 @@
     <p>Aerospace Engineering | Dynamics, Control, and Estimation</p>
     <div class="contact-bar">
         <span>(540)-818-0146</span>
-        <span>•</span>
+        <span class="bullet">•</span>
         <a href="mailto:ryan7820@gmail.com">ryan7820@gmail.com</a>
-        <span>•</span>
+        <span class="bullet">•</span>
         <a href="https://www.linkedin.com/in/ryan-epperly/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <span>•</span>
+        <span class="bullet">•</span>
         <a href="https://github.com/ryan7820" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <span class="bullet">•</span>
+        <a href="https://app.joinhandshake.com/profiles/ryanepperly" target="_blank" rel="noopener noreferrer">Handshake</a>
+        <span class="bullet">•</span>
+        <a href="https://www.researchgate.net/profile/Ryan-Epperly" target="_blank" rel="noopener noreferrer">ResearchGate</a>
     </div>
     <a href="Ryan_Epperly_Engineering_Resume.pdf" class="btn" target="_blank" rel="noopener noreferrer">View Resume (PDF)</a>
 </header>
@@ -392,7 +422,7 @@
         <div class="card">
             <img src="images/Virginia Tech Logo.jpg" alt="Virginia Tech Logo" class="img-logo">
             <div class="card-header">
-                <h3>Virginia Tech</h3>
+                <h3><a href="https://vt.edu/" target="_blank" rel="noopener noreferrer">Virginia Tech</a></h3>
             </div>
             <div class="subtitle">Bachelor of Science in Aerospace Engineering</div>
             <span class="date" style="margin-top: 10px;">Jan 2026 – May 2028</span>
@@ -402,7 +432,7 @@
         <div class="card">
             <img src="images/NRCCwebp.webp" alt="New River Community College Logo" class="img-logo">
             <div class="card-header">
-                <h3>New River Community College</h3>
+                <h3><a href="https://www.nr.edu/" target="_blank" rel="noopener noreferrer">New River Community College</a></h3>
             </div>
             <div class="subtitle">Associate of Science (A.S.), Engineering</div>
             <span class="date" style="margin-top: 10px;">Aug 2024 – Dec 2025</span>
@@ -418,7 +448,7 @@
             <div class="card-header">
                 <h3>Engineering Intern</h3>
             </div>
-            <div class="subtitle">Butler Parachute Systems</div>
+            <div class="subtitle"><a href="https://www.butlerparachutes.com/" target="_blank" rel="noopener noreferrer">Butler Parachute Systems</a></div>
             <span class="date" style="margin-top: 10px;">May 2026 – Aug 2026</span>
             <ul>
                 <li>Designed a line continuity tool in SolidWorks, optimizing geometry to eliminate sharp edges and prevent cord snagging.</li>
@@ -438,7 +468,7 @@
             <div class="card-header">
                 <h3>Space Systems Intern</h3>
             </div>
-            <div class="subtitle">GEOINT ISAC</div>
+            <div class="subtitle"><a href="https://www.geointisac.org/" target="_blank" rel="noopener noreferrer">GEOINT ISAC</a></div>
             <span class="date" style="margin-top: 10px;">May 2026 – Aug 2026</span>
             <ul>
                 <li>Collaborated with NASA to conduct research on critical infrastructure resilience and geospatial risk factors, authoring technical papers on climate-induced aviation density altitude penalties.</li>
@@ -457,7 +487,7 @@
             <div class="card-header">
                 <h3>Regulatory Engineering Intern</h3>
             </div>
-            <div class="subtitle">Blackwing Space</div>
+            <div class="subtitle"><a href="https://www.blackwingspace.com/" target="_blank" rel="noopener noreferrer">Blackwing Space</a></div>
             <span class="date" style="margin-top: 10px;">Mar 2026 – Aug 2026</span>
             <ul>
                 <li>Researched CubeSat systems, subsystems, mission requirements, and supporting regulatory documentation.</li>
@@ -478,7 +508,7 @@
             <div class="card-header">
                 <h3>Space Law & Policy Specialist</h3>
             </div>
-            <div class="subtitle">Virginia Aerospace Science & Technology Scholars (NASA Langley)</div>
+            <div class="subtitle"><a href="https://vsgc.odu.edu/vasts/" target="_blank" rel="noopener noreferrer">Virginia Aerospace Science & Technology Scholars (NASA Langley)</a></div>
             <ul>
                 <li>Participated in an online portion of the program alongside approximately 500 selected scholars.</li>
                 <li>Hand-selected as one of ~180 students to participate in the immersive summer academy portion at NASA Langley.</li>
@@ -495,7 +525,7 @@
             <div class="card-header">
                 <h3>Commissioner of Revenue</h3>
             </div>
-            <div class="subtitle">Virginia Boys State (The American Legion)</div>
+            <div class="subtitle"><a href="https://www.vaboysstate.org/" target="_blank" rel="noopener noreferrer">Virginia Boys State (The American Legion)</a></div>
             <span class="date" style="margin-top: 10px;">Jun 2023</span>
             <ul>
                 <li>Elected by peers in Burke City to manage tax policies and revenue generation for the simulated city of Burke.</li>
@@ -507,7 +537,7 @@
             <div class="card-header">
                 <h3>Student Member</h3>
             </div>
-            <div class="subtitle">American Institute of Aeronautics and Astronautics (AIAA)</div>
+            <div class="subtitle"><a href="https://www.aiaa.org/" target="_blank" rel="noopener noreferrer">American Institute of Aeronautics and Astronautics (AIAA)</a></div>
             <span class="date" style="margin-top: 10px;">May 2026 – Present</span>
             <ul>
                 <li>Engaging with aerospace professionals and actively preparing to participate in aircraft design competitions such as Design/Build/Fly (DBF) in Fall 2026.</li>
@@ -563,7 +593,7 @@
             </div>
             <div class="subtitle">Community Foundation of the New River Valley</div>
             <span class="date" style="margin-top: 10px;">May 2024</span>
-            <p style="margin: 5px 0 0;">Awarded in recognition of academic integrity, scholastic excellence, and dedication to engineering studies.</p>
+            <p style="margin: 5px 0 0;">Awarded in recognition of academic integrity, scholastic excellence, and dedication to engineering studies. Featured in the <a href="https://cfnrv.org/congratulations-to-our-2024-scholarship-recipients/" target="_blank" rel="noopener noreferrer" class="inline-link">CFNRV 2024 Scholarship Recipients Announcement</a>.</p>
         </div>
 
         <div class="card">
@@ -585,7 +615,7 @@
         </div>
     </section>
 
-    <!-- Accordions used below this line to save vertical space and prevent scrolling fatigue -->
+    <!-- Accordions used below this line to save vertical space -->
 
     <section id="volunteering">
         <h2 class="section-title">Volunteering</h2>
@@ -616,7 +646,251 @@
 
     <section id="certifications">
         <h2 class="section-title">Verified Training & Certifications</h2>
+
+        <details>
+            <summary>IS-111.a: Livestock in Disasters</summary>
+            <div class="details-content">
+                <span class="date">May 28, 2026</span>
+                <ul>
+                    <li>Successfully completed the Independent Study course[cite: 15].</li>
+                    <li>Issued by FEMA National Disaster & Emergency Management University[cite: 15].</li>
+                    <li>Earned 0.40 IACET CEUs for continued professional development[cite: 15].</li>
+                    <li><a href="IS-111 Livestock in Disasters.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PDF)</a></li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>IS-120.c: An Introduction to Exercises</summary>
+            <div class="details-content">
+                <span class="date">Aug 21, 2026</span>
+                <ul>
+                    <li>Successfully completed the Independent Study course[cite: 1].</li>
+                    <li>Issued by FEMA National Disaster & Emergency Management University[cite: 1].</li>
+                    <li>Earned 0.30 IACET CEUs for continued professional development[cite: 1].</li>
+                    <li><a href="IS-120.c_certificate_An Introduction to Exercises.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PDF)</a></li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>IS-130.a: How to be an Exercise Evaluator</summary>
+            <div class="details-content">
+                <span class="date">Aug 21, 2026</span>
+                <ul>
+                    <li>Successfully completed the Independent Study course[cite: 2].</li>
+                    <li>Issued by FEMA National Disaster & Emergency Management University[cite: 2].</li>
+                    <li>Earned 0.30 IACET CEUs for continued professional development[cite: 2].</li>
+                    <li><a href="IS-130.a_certificate_How to be an Exercise Evaluator .pdf" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PDF)</a></li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>IS-235.c: Emergency Planning</summary>
+            <div class="details-content">
+                <span class="date">Aug 21, 2026</span>
+                <ul>
+                    <li>Successfully completed the Independent Study course[cite: 9].</li>
+                    <li>Issued by FEMA National Disaster & Emergency Management University[cite: 9].</li>
+                    <li>Earned 0.50 IACET CEUs for continued professional development[cite: 9].</li>
+                    <li><a href="IS-235.c_certificate_Emergency Planning.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PDF)</a></li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>IS-238: Critical Concepts of Supply Chain Flow</summary>
+            <div class="details-content">
+                <span class="date">Jul 18, 2026</span>
+                <ul>
+                    <li>Successfully completed the Independent Study course[cite: 14].</li>
+                    <li>Issued by FEMA National Disaster & Emergency Management University[cite: 14].</li>
+                    <li>Earned 0.20 IACET CEUs for continued professional development[cite: 14].</li>
+                    <li><a href="IS-00238 Critical Concepts of Supply Chain Flow and Resilience.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PDF)</a></li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>IS-288.a: Role of Voluntary Organizations</summary>
+            <div class="details-content">
+                <span class="date">Jul 18, 2026</span>
+                <ul>
+                    <li>Successfully completed the Independent Study course on the Role of Voluntary Organizations in Emergency Management[cite: 13].</li>
+                    <li>Issued by FEMA National Disaster & Emergency Management University[cite: 13].</li>
+                    <li>Earned 0.10 IACET CEUs for continued professional development[cite: 13].</li>
+                    <li><a href="IS-288_The Role of Voluntary Organizations in Emergency Management.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PDF)</a></li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>IS-700.b: National Incident Management System</summary>
+            <div class="details-content">
+                <span class="date">Jul 26, 2026</span>
+                <ul>
+                    <li>Successfully completed the Independent Study course[cite: 10].</li>
+                    <li>Issued by FEMA National Disaster & Emergency Management University[cite: 10].</li>
+                    <li>Earned 0.40 IACET CEUs for continued professional development[cite: 10].</li>
+                    <li><a href="IS-700.b_certificate_0010004215.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PDF)</a></li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>IS-1300.a: Introduction to Continuity</summary>
+            <div class="details-content">
+                <span class="date">Aug 21, 2026</span>
+                <ul>
+                    <li>Successfully completed the Independent Study course[cite: 12].</li>
+                    <li>Issued by FEMA National Disaster & Emergency Management University[cite: 12].</li>
+                    <li>Earned 0.10 IACET CEUs for continued professional development[cite: 12].</li>
+                    <li><a href="IS-1300.a_certificate_Introduction to Continuity.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PDF)</a></li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>IS-66: Preparing the Nation for Space Weather Events</summary>
+            <div class="details-content">
+                <span class="date">Apr 19, 2026</span>
+                <ul>
+                    <li>Successfully completed the Independent Study course[cite: 8].</li>
+                    <li>Issued by FEMA National Disaster & Emergency Management University[cite: 8].</li>
+                    <li>Earned 0.20 IACET CEUs for continued professional development[cite: 8].</li>
+                    <li><a href="IS-66_certificate_Space_Weather.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PDF)</a></li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Communicating Climate Change Scenarios</summary>
+            <div class="details-content">
+                <span class="date">Jun 20, 2026</span>
+                <ul>
+                    <li>Successfully completed the online learning course "Communicating Climate Change Scenarios With Decision Makers Lecture by Dr. Holly Hartmann, Research Hydrologist"[cite: 11].</li>
+                    <li>Issued by the University Corporation for Atmospheric Research's The COMET® Program[cite: 11].</li>
+                    <li>The online learning course required .75 - 1.00 hours to complete[cite: 11].</li>
+                    <li><a href="Communicating Climate Change Scenarios With Decision Makers Lecture by Dr. Holly Hartmann, Research Hydrologist.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PDF)</a></li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Space Weather Basics, 3rd Edition</summary>
+            <div class="details-content">
+                <span class="date">Aug 21, 2026</span>
+                <ul>
+                    <li>Successfully completed the online learning course[cite: 5].</li>
+                    <li>Issued by the University Corporation for Atmospheric Research's The COMET® Program[cite: 5].</li>
+                    <li>The online learning course required .75 - 1.00 hours to complete[cite: 5].</li>
+                    <li><a href="Space Weather Basics.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PDF)</a></li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Alberta Clipper Case Exercise</summary>
+            <div class="details-content">
+                <span class="date">Jul 18, 2026</span>
+                <ul>
+                    <li>Successfully completed the online learning course[cite: 3].</li>
+                    <li>Issued by the University Corporation for Atmospheric Research's The COMET® Program[cite: 3].</li>
+                    <li>The online learning course required 1.50 - 2.00 hours to complete[cite: 3].</li>
+                    <li><a href="Alberta Clipper Case Exercise.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PDF)</a></li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Facilitating Stakeholder Discussions</summary>
+            <div class="details-content">
+                <span class="date">Jul 17, 2026</span>
+                <ul>
+                    <li>Successfully completed the online learning course "Facilitating Stakeholder Discussions to Improve Impact-Based Forecasting Approaches"[cite: 4].</li>
+                    <li>Issued by the University Corporation for Atmospheric Research's The COMET® Program[cite: 4].</li>
+                    <li>The online learning course required .75 - 1.00 hours to complete[cite: 4].</li>
+                    <li><a href="Facilitating Stakeholder Discussions to Improve Impact-Based Forecasting Approaches.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PDF)</a></li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>COSMIC: Atmospheric Remote Sensing</summary>
+            <div class="details-content">
+                <span class="date">May 28, 2026</span>
+                <ul>
+                    <li>Successfully completed the online learning course "COSMIC: Atmospheric Remote Sensing for Weather, Climate, and the Ionosphere"[cite: 6].</li>
+                    <li>Issued by the University Corporation for Atmospheric Research's The COMET® Program[cite: 6].</li>
+                    <li>The online learning course required 0 - .25 hours to complete[cite: 6].</li>
+                    <li><a href="COSMIC Atmospheric Remote Sensing for Weather Climate and the Ionosphere - COMET Course Certificate.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PDF)</a></li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Satellite Remote Sensing Capabilities for Ocean Color</summary>
+            <div class="details-content">
+                <span class="date">May 27, 2026</span>
+                <ul>
+                    <li>Successfully completed the online learning course[cite: 7].</li>
+                    <li>Issued by the University Corporation for Atmospheric Research's The COMET® Program[cite: 7].</li>
+                    <li>The online learning course required .25 - .50 hours to complete[cite: 7].</li>
+                    <li><a href="Satellite Remote Sensing Capabilities for Ocean Color - COMET Course Certificate .pdf" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PDF)</a></li>
+                </ul>
+            </div>
+        </details>
         
+        <details>
+            <summary>Radio Wave Propagation</summary>
+            <div class="details-content">
+                <span class="date">Aug 21, 2026</span>
+                <ul>
+                    <li>Successfully completed the online learning course "Radio Wave Propagation".</li>
+                    <li>Issued by the University Corporation for Atmospheric Research's The COMET® Program.</li>
+                    <li>The online learning course required 1.00 - 1.25 hours to complete.</li>
+                    <li><a href="Radio Wave Propagation.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PDF)</a></li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Fundamentals of Open-Source Intelligence (OSINT)</summary>
+            <div class="details-content">
+                <span class="date">Aug 21, 2026</span>
+                <ul>
+                    <li>Successfully completed the online certificate program.</li>
+                    <li>Issued by the Alison online learning platform.</li>
+                    <li><a href="Fundamentals of Open-Source Intelligence (OSINT).png" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PNG)</a></li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Root Cause Analysis Tools and Techniques</summary>
+            <div class="details-content">
+                <span class="date">Aug 21, 2026</span>
+                <ul>
+                    <li>Successfully completed the online certificate program.</li>
+                    <li>Issued by the Alison online learning platform.</li>
+                    <li><a href="Root Cause Analysis Tools and Techniques.png" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PNG)</a></li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Analyze Satellite Data to Investigate Plant Health</summary>
+            <div class="details-content">
+                <span class="date">2026</span>
+                <ul>
+                    <li>Successfully completed the online learning course.</li>
+                    <li>Issued by CognitiveClass.ai (IBM).</li>
+                    <li><a href="Analyze Satellite Data to Investigate Plant Health.png" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PNG)</a></li>
+                </ul>
+            </div>
+        </details>
+
         <details>
             <summary>IT Management - Building Information Systems</summary>
             <div class="details-content">
@@ -639,123 +913,6 @@
                     <li>Issued by the Alison online learning platform.</li>
                     <li>Demonstrated 100% start-to-completion with an 88% average score.</li>
                     <li><a href="Information Systems Development and Society.png" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PNG)</a></li>
-                </ul>
-            </div>
-        </details>
-        
-        <details>
-            <summary>IS-120.c: An Introduction to Exercises</summary>
-            <div class="details-content">
-                <span class="date">Aug 21, 2026</span>
-                <ul>
-                    <li>Successfully completed the Independent Study course.</li>
-                    <li>Issued by FEMA National Disaster & Emergency Management University.</li>
-                    <li>Earned 0.30 IACET CEUs for continued professional development.</li>
-                    <li><a href="IS-120.c_certificate_An Introduction to Exercises.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PDF)</a></li>
-                </ul>
-            </div>
-        </details>
-
-        <details>
-            <summary>IS-130.a: How to be an Exercise Evaluator</summary>
-            <div class="details-content">
-                <span class="date">Aug 21, 2026</span>
-                <ul>
-                    <li>Successfully completed the Independent Study course.</li>
-                    <li>Issued by FEMA National Disaster & Emergency Management University.</li>
-                    <li>Earned 0.30 IACET CEUs for continued professional development.</li>
-                    <li><a href="IS-130.a_certificate_How to be an Exercise Evaluator .pdf" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PDF)</a></li>
-                </ul>
-            </div>
-        </details>
-
-        <details>
-            <summary>IS-66: Preparing the Nation for Space Weather Events</summary>
-            <div class="details-content">
-                <span class="date">Apr 19, 2026</span>
-                <ul>
-                    <li>Successfully completed the Independent Study course.</li>
-                    <li>Issued by FEMA National Disaster & Emergency Management University.</li>
-                    <li>Earned 0.20 IACET CEUs for continued professional development.</li>
-                    <li><a href="IS-66_certificate_Space_Weather.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PDF)</a></li>
-                </ul>
-            </div>
-        </details>
-
-        <details>
-            <summary>Space Weather Basics, 3rd Edition</summary>
-            <div class="details-content">
-                <span class="date">Aug 21, 2026</span>
-                <ul>
-                    <li>Successfully completed the online learning course.</li>
-                    <li>Issued by the University Corporation for Atmospheric Research's The COMET® Program.</li>
-                    <li>The online learning course required .75 - 1.00 hours to complete.</li>
-                    <li><a href="Space Weather Basics.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PDF)</a></li>
-                </ul>
-            </div>
-        </details>
-
-        <details>
-            <summary>Alberta Clipper Case Exercise</summary>
-            <div class="details-content">
-                <span class="date">Jul 18, 2026</span>
-                <ul>
-                    <li>Successfully completed the online learning course.</li>
-                    <li>Issued by the University Corporation for Atmospheric Research's The COMET® Program.</li>
-                    <li>The online learning course required 1.50 - 2.00 hours to complete.</li>
-                    <li><a href="Alberta Clipper Case Exercise.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PDF)</a></li>
-                </ul>
-            </div>
-        </details>
-
-        <details>
-            <summary>Facilitating Stakeholder Discussions</summary>
-            <div class="details-content">
-                <span class="date">Jul 17, 2026</span>
-                <ul>
-                    <li>Successfully completed the online learning course "Facilitating Stakeholder Discussions to Improve Impact-Based Forecasting Approaches".</li>
-                    <li>Issued by the University Corporation for Atmospheric Research's The COMET® Program.</li>
-                    <li>The online learning course required .75 - 1.00 hours to complete.</li>
-                    <li><a href="Facilitating Stakeholder Discussions to Improve Impact-Based Forecasting Approaches.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PDF)</a></li>
-                </ul>
-            </div>
-        </details>
-
-        <details>
-            <summary>COSMIC: Atmospheric Remote Sensing</summary>
-            <div class="details-content">
-                <span class="date">May 28, 2026</span>
-                <ul>
-                    <li>Successfully completed the online learning course "COSMIC: Atmospheric Remote Sensing for Weather, Climate, and the Ionosphere".</li>
-                    <li>Issued by the University Corporation for Atmospheric Research's The COMET® Program.</li>
-                    <li>The online learning course required 0 - .25 hours to complete.</li>
-                    <li><a href="COSMIC Atmospheric Remote Sensing for Weather Climate and the Ionosphere - COMET Course Certificate.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PDF)</a></li>
-                </ul>
-            </div>
-        </details>
-
-        <details>
-            <summary>Satellite Remote Sensing Capabilities for Ocean Color</summary>
-            <div class="details-content">
-                <span class="date">May 27, 2026</span>
-                <ul>
-                    <li>Successfully completed the online learning course.</li>
-                    <li>Issued by the University Corporation for Atmospheric Research's The COMET® Program.</li>
-                    <li>The online learning course required .25 - .50 hours to complete.</li>
-                    <li><a href="Satellite Remote Sensing Capabilities for Ocean Color - COMET Course Certificate .pdf" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PDF)</a></li>
-                </ul>
-            </div>
-        </details>
-        
-        <details>
-            <summary>Radio Wave Propagation</summary>
-            <div class="details-content">
-                <span class="date">Aug 21, 2026</span>
-                <ul>
-                    <li>Successfully completed the online learning course "Radio Wave Propagation".</li>
-                    <li>Issued by the University Corporation for Atmospheric Research's The COMET® Program.</li>
-                    <li>The online learning course required 1.00 - 1.25 hours to complete.</li>
-                    <li><a href="Radio Wave Propagation.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">View Verified Certificate (PDF)</a></li>
                 </ul>
             </div>
         </details>
