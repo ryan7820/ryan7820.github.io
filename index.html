@@ -475,9 +475,9 @@
     <a href="#about">About</a>
     <a href="#education">Education</a>
     <a href="#experience">Experience</a>
-    <a href="#sandbox">Hardware Sandbox</a>
     <a href="#extracurriculars">Extracurriculars</a>
     <a href="#projects">Projects</a>
+    <a href="#sandbox">Hardware Sandbox</a>
     <a href="#awards">Honors & Awards</a>
     <a href="#volunteering">Volunteering</a>
     <a href="#certifications">Certifications</a>
@@ -585,14 +585,21 @@
                 <h3>Space Systems Intern</h3>
             </div>
             <div class="subtitle"><a href="https://geoint-isac.global" target="_blank" rel="noopener noreferrer">GEOINT ISAC (SpaceX / NASA Cohort)</a></div>
-            <span class="date" style="margin-top: 10px;">May 2026 – Aug 2026</span>
+            <span class="date" style="margin-top: 10px;">May 2026 – Oct 2026</span>
             
             <div class="case-section">
                 <h4>Research & Analysis</h4>
                 <p>Collaborated with NASA to evaluate critical infrastructure resilience and geospatial risk factors. Authored technical papers on climate-induced aviation density altitude penalties and evaluated LEO satellite constellation resilience (Starlink) to enhance disaster situational awareness.</p>
             </div>
+            
+            <div class="case-section">
+                <h4>Predictive Modeling (Extension Project)</h4>
+                <p>Providing extended support to the USAF Space Force Emergency Management/CBRN team to develop a Python-based AI predictive model for tracking and anticipating critical infrastructure vulnerabilities.</p>
+            </div>
 
             <div class="card-skills">
+                <span class="mini-tag">Python</span>
+                <span class="mini-tag">AI / Predictive Analytics</span>
                 <span class="mini-tag">LEO Constellations</span>
                 <span class="mini-tag">Geospatial Intelligence</span>
                 <span class="mini-tag">Risk Assessment</span>
@@ -615,38 +622,6 @@
                 <span class="mini-tag">CubeSat Systems</span>
                 <span class="mini-tag">Aerospace Regulations</span>
                 <span class="mini-tag">FCC Compliance</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- SANDBOX SECTION -->
-    <section id="sandbox">
-        <h2 class="section-title">Hardware Sandbox & Rapid Prototyping</h2>
-        
-        <div class="card">
-            <div class="card-header">
-                <h3>Personal Fabrication & 3D Printing</h3>
-            </div>
-            <div class="subtitle">Bambu Lab P2S | Fusion 360 | Inventor</div>
-            
-            <div class="case-study-grid">
-                <div class="case-text">
-                    <p style="margin-top: 10px;">Beyond the classroom, I am an active maker. I utilize my Bambu Lab P2S to rapidly prototype custom mechanical assemblies and iterate on personal designs.</p>
-                    <p>I rely on Fusion 360, SolidWorks, and Autodesk Inventor for parametric modeling, bridging the gap between theoretical physics and physical, functional hardware.</p>
-                </div>
-                <div class="case-visual">
-                    <div class="image-placeholder" style="border-color: var(--accent-color); color: var(--accent-color);">
-                        <span>[ Replace with Photos of 3D Prints / Assemblies ]</span>
-                        <p style="font-size: 0.75rem; font-weight: 400; margin-top: 5px;">Show off your coolest mechanical builds here!</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-skills">
-                <span class="mini-tag">3D Printing</span>
-                <span class="mini-tag">Rapid Prototyping</span>
-                <span class="mini-tag">Parametric Modeling</span>
-                <span class="mini-tag">Mechanical Assemblies</span>
             </div>
         </div>
     </section>
@@ -727,9 +702,9 @@
                     </div>
                 </div>
                 <div class="case-visual">
-                    <div class="image-placeholder">
-                        <span>[ Replace with MATLAB Plot/GUI Screenshot ]</span>
-                        <p style="font-size: 0.75rem; font-weight: 400; margin-top: 5px;">e.g., Trajectory simulation or EKF state estimation graphs.</p>
+                    <div class="image-placeholder" style="border: none; padding: 0; background: transparent;">
+                        <img src="images/Orbital Trajectories and Telemetry Performance Simulation.jpg" alt="Orbital Trajectories and Telemetry" style="width: 100%; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                        <img src="images/Estimation.jpg" alt="EKF Estimation Code" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
                     </div>
                 </div>
             </div>
@@ -759,11 +734,14 @@
                         <h4>The Approach</h4>
                         <p>Developed simulation models in MATLAB to analyze varying material densities and simulate solar particle/cosmic ray radiation penetration metrics.</p>
                     </div>
+                    <div class="case-section">
+                        <h4>The Results</h4>
+                        <p>Determined that Polyethylene displays the strongest radiation resistance with less shield thickness[cite: 1]. It reduces radiation exposure to 30% of baseline levels at a thickness of approximately 7 cm[cite: 1].</p>
+                    </div>
                 </div>
                 <div class="case-visual">
-                    <div class="image-placeholder">
-                        <span>[ Replace with Radiation Data Chart ]</span>
-                        <p style="font-size: 0.75rem; font-weight: 400; margin-top: 5px;">e.g., Material density vs. radiation penetration comparison.</p>
+                    <div class="image-placeholder" style="border: none; padding: 0; background: transparent;">
+                        <img src="images/Radiation Shielding Efficiency.png" alt="Radiation Shielding Efficiency Chart" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
                     </div>
                 </div>
             </div>
@@ -789,6 +767,38 @@
                 <span class="mini-tag">Space Law</span>
                 <span class="mini-tag">Regulatory Compliance</span>
                 <span class="mini-tag">Planetary Protection</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SANDBOX SECTION -->
+    <section id="sandbox">
+        <h2 class="section-title">Hardware Sandbox & Rapid Prototyping</h2>
+        
+        <div class="card">
+            <div class="card-header">
+                <h3>Personal Fabrication & 3D Printing</h3>
+            </div>
+            <div class="subtitle">Bambu Lab P2S | Autodesk Inventor | SolidWorks</div>
+            
+            <div class="case-study-grid">
+                <div class="case-text">
+                    <p style="margin-top: 10px;">Beyond the classroom, I am an active maker. I utilize my Bambu Lab P2S to rapidly prototype custom mechanical assemblies and iterate on personal designs.</p>
+                    <p>I rely on SolidWorks and Autodesk Inventor for parametric modeling, bridging the gap between theoretical physics and physical, functional hardware.</p>
+                </div>
+                <div class="case-visual">
+                    <div class="image-placeholder" style="border: none; padding: 0; background: transparent;">
+                        <img src="images/image_851916.jpg" alt="3D Printed Bookmark" style="width: 100%; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                        <img src="images/image_851932.png" alt="Bookmark CAD Design" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); background-color: #fff;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-skills">
+                <span class="mini-tag">3D Printing</span>
+                <span class="mini-tag">Rapid Prototyping</span>
+                <span class="mini-tag">Parametric Modeling</span>
+                <span class="mini-tag">Mechanical Assemblies</span>
             </div>
         </div>
     </section>
@@ -968,7 +978,6 @@
                     <li>SolidWorks</li>
                     <li>AutoCAD</li>
                     <li>Autodesk Inventor</li>
-                    <li>Fusion 360</li>
                     <li>Ansys (Topology Optimization)</li>
                 </ul>
             </div>
