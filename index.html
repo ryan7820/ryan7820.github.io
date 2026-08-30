@@ -182,7 +182,6 @@
             left: 0;
         }
 
-        /* --- Case Study Card Upgrades --- */
         .card {
             background: var(--card-bg);
             border-radius: 12px;
@@ -209,7 +208,7 @@
 
         @media (min-width: 768px) {
             .case-study-grid {
-                grid-template-columns: 3fr 2fr; /* Text on left, images on right */
+                grid-template-columns: 3fr 2fr;
             }
         }
 
@@ -229,7 +228,6 @@
             font-size: 0.95rem;
         }
 
-        /* Placeholder for CAD/MATLAB Images */
         .image-placeholder {
             background: #1e293b;
             border: 2px dashed #334155;
@@ -262,6 +260,16 @@
             font-weight: 700;
         }
 
+        .card h3 a {
+            color: #f8fafc;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .card h3 a:hover {
+            color: var(--accent-color);
+        }
+
         .subtitle {
             font-weight: 600;
             color: var(--accent-color);
@@ -290,6 +298,16 @@
             margin-bottom: 10px;
         }
 
+        ul {
+            margin: 15px 0 0;
+            padding-left: 20px;
+            color: var(--text-main);
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+        
         .inline-link {
             color: var(--accent-color);
             text-decoration: none;
@@ -437,6 +455,10 @@
             object-fit: contain;
         }
 
+        .img-patch {
+            border-radius: 50%;
+        }
+
         footer {
             text-align: center;
             padding: 50px 20px;
@@ -451,10 +473,15 @@
 
 <nav>
     <a href="#about">About</a>
-    <a href="#projects">Engineering Projects</a>
+    <a href="#education">Education</a>
     <a href="#experience">Experience</a>
     <a href="#sandbox">Hardware Sandbox</a>
-    <a href="#credentials">Credentials & Honors</a>
+    <a href="#extracurriculars">Extracurriculars</a>
+    <a href="#projects">Projects</a>
+    <a href="#awards">Honors & Awards</a>
+    <a href="#volunteering">Volunteering</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#skills">Skills</a>
 </nav>
 
 <header>
@@ -495,7 +522,185 @@
         </div>
     </section>
 
-    <!-- PROMINENT PROJECTS SECTION -->
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="card">
+            <img src="images/Virginia Tech Logo.jpg" alt="Virginia Tech Logo" class="img-logo">
+            <div class="card-header">
+                <h3><a href="https://vt.edu/" target="_blank" rel="noopener noreferrer">Virginia Tech</a></h3>
+            </div>
+            <div class="subtitle">Bachelor of Science in Aerospace Engineering</div>
+            <span class="date" style="margin-top: 10px;">Jan 2026 – May 2028</span>
+            <p style="margin: 5px 0 0;"><strong>Specialization:</strong> Dynamics, Control, and Estimation | <strong>Minor:</strong> Mathematics</p>
+        </div>
+
+        <div class="card">
+            <img src="images/NRCCwebp.webp" alt="New River Community College Logo" class="img-logo">
+            <div class="card-header">
+                <h3><a href="https://www.nr.edu/" target="_blank" rel="noopener noreferrer">New River Community College</a></h3>
+            </div>
+            <div class="subtitle">Associate of Science (A.S.), Engineering</div>
+            <span class="date" style="margin-top: 10px;">Aug 2024 – Dec 2025</span>
+            <p style="margin: 5px 0 0;">Graduated Magna Cum Laude</p>
+        </div>
+    </section>
+    
+    <section id="experience">
+        <h2 class="section-title">Engineering Experience</h2>
+
+        <div class="card">
+            <img src="images/ButlerParachutes.webp" alt="Butler Parachute Systems Logo" class="img-logo">
+            <div class="card-header">
+                <h3>Engineering Intern</h3>
+            </div>
+            <div class="subtitle"><a href="https://www.butlerparachutes.com/" target="_blank" rel="noopener noreferrer">Butler Parachute Systems</a></div>
+            <span class="date" style="margin-top: 10px;">May 2026 – Aug 2026</span>
+            
+            <div class="case-text">
+                <div class="case-section">
+                    <h4>Design & Prototyping</h4>
+                    <p>Designed a line continuity tool in SolidWorks, optimizing geometry to eliminate sharp edges and prevent cord snagging.</p>
+                </div>
+                <div class="case-section">
+                    <h4>Testing & Hardware</h4>
+                    <p>Engineered a custom load cell amplifier enclosure. Executed 150+ Mecmesin/hydraulic tensile tests and performed 10 operational drop tests.</p>
+                </div>
+                <div class="case-section">
+                    <h4>Quality Control</h4>
+                    <p>Developed a QC program referencing PIA documents and MIL-STD-849D, improving inspection efficiency by 20%.</p>
+                </div>
+            </div>
+
+            <div class="card-skills">
+                <span class="mini-tag">SolidWorks</span>
+                <span class="mini-tag">Mecmesin Testing</span>
+                <span class="mini-tag">MIL-STD-849D</span>
+                <span class="mini-tag">Quality Control</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/Screenshot 2026-08-27 131325.png" alt="GEOINT ISAC Patch" class="img-logo img-patch">
+            <div class="card-header">
+                <h3>Space Systems Intern</h3>
+            </div>
+            <div class="subtitle"><a href="https://geoint-isac.global" target="_blank" rel="noopener noreferrer">GEOINT ISAC (SpaceX / NASA Cohort)</a></div>
+            <span class="date" style="margin-top: 10px;">May 2026 – Aug 2026</span>
+            
+            <div class="case-section">
+                <h4>Research & Analysis</h4>
+                <p>Collaborated with NASA to evaluate critical infrastructure resilience and geospatial risk factors. Authored technical papers on climate-induced aviation density altitude penalties and evaluated LEO satellite constellation resilience (Starlink) to enhance disaster situational awareness.</p>
+            </div>
+
+            <div class="card-skills">
+                <span class="mini-tag">LEO Constellations</span>
+                <span class="mini-tag">Geospatial Intelligence</span>
+                <span class="mini-tag">Risk Assessment</span>
+                <span class="mini-tag">OSINT</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/Blackwing.jpg" alt="Blackwing Space Logo" class="img-logo">
+            <div class="card-header">
+                <h3>Regulatory Engineering Intern</h3>
+            </div>
+            <div class="subtitle"><a href="https://www.blackwingspace.com/" target="_blank" rel="noopener noreferrer">Blackwing Space</a></div>
+            <span class="date" style="margin-top: 10px;">Mar 2026 – Aug 2026</span>
+            <ul>
+                <li>Researched CubeSat systems, subsystems, mission requirements, and supporting regulatory documentation.</li>
+                <li>Identified and reviewed CubeSat components and technical materials, gathering and organizing FCC-related supporting documents.</li>
+            </ul>
+            <div class="card-skills">
+                <span class="mini-tag">CubeSat Systems</span>
+                <span class="mini-tag">Aerospace Regulations</span>
+                <span class="mini-tag">FCC Compliance</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SANDBOX SECTION -->
+    <section id="sandbox">
+        <h2 class="section-title">Hardware Sandbox & Rapid Prototyping</h2>
+        
+        <div class="card">
+            <div class="card-header">
+                <h3>Personal Fabrication & 3D Printing</h3>
+            </div>
+            <div class="subtitle">Bambu Lab P2S | Fusion 360 | Inventor</div>
+            
+            <div class="case-study-grid">
+                <div class="case-text">
+                    <p style="margin-top: 10px;">Beyond the classroom, I am an active maker. I utilize my Bambu Lab P2S to rapidly prototype custom mechanical assemblies and iterate on personal designs.</p>
+                    <p>I rely on Fusion 360, SolidWorks, and Autodesk Inventor for parametric modeling, bridging the gap between theoretical physics and physical, functional hardware.</p>
+                </div>
+                <div class="case-visual">
+                    <div class="image-placeholder" style="border-color: var(--accent-color); color: var(--accent-color);">
+                        <span>[ Replace with Photos of 3D Prints / Assemblies ]</span>
+                        <p style="font-size: 0.75rem; font-weight: 400; margin-top: 5px;">Show off your coolest mechanical builds here!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-skills">
+                <span class="mini-tag">3D Printing</span>
+                <span class="mini-tag">Rapid Prototyping</span>
+                <span class="mini-tag">Parametric Modeling</span>
+                <span class="mini-tag">Mechanical Assemblies</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="extracurriculars">
+        <h2 class="section-title">Extracurriculars & Leadership</h2>
+        
+        <div class="card">
+            <img src="images/NASA_Picture.jpg" alt="NASA Langley Research Center" style="float: right; max-width: 180px; border-radius: 8px; margin: 0 0 15px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+            <div class="card-header">
+                <h3>Space Law & Policy Specialist</h3>
+            </div>
+            <div class="subtitle"><a href="https://vsgc.odu.edu/vasts/" target="_blank" rel="noopener noreferrer">Virginia Aerospace Science & Technology Scholars (NASA Langley)</a></div>
+            <ul>
+                <li>Participated in an online portion of the program alongside approximately 500 selected scholars.</li>
+                <li>Hand-selected as one of ~180 students to participate in the immersive summer academy portion at NASA Langley.</li>
+                <li>Served as the Space Law and Policy Specialist for Mission Integration, leading approximately 50 scholars across four teams through the legal framework of aerospace.</li>
+            </ul>
+            <div class="card-skills">
+                <span class="mini-tag">Space Law & Policy</span>
+                <span class="mini-tag">Mission Integration</span>
+                <span class="mini-tag">Team Leadership</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h3>Commissioner of Revenue</h3>
+            </div>
+            <div class="subtitle"><a href="https://www.vaboysstate.org/" target="_blank" rel="noopener noreferrer">Virginia Boys State (The American Legion)</a></div>
+            <span class="date" style="margin-top: 10px;">Jun 2023</span>
+            <ul>
+                <li>Elected by peers in Burke City to manage tax policies and revenue generation for the simulated city of Burke.</li>
+                <li>Collaborated with the city council and state officials to allocate funds and balance the municipal budget.</li>
+            </ul>
+            <div class="card-gallery">
+                <img src="images/Boys_State_Certificate.jpg" alt="Boys State Certificate">
+                <img src="images/City_of_Burke.jpg" alt="City of Burke Delegates">
+                <img src="images/Keynote_Assembly.jpg" alt="Keynote Assembly">
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h3>Student Member</h3>
+            </div>
+            <div class="subtitle"><a href="https://www.aiaa.org/" target="_blank" rel="noopener noreferrer">American Institute of Aeronautics and Astronautics (AIAA)</a></div>
+            <span class="date" style="margin-top: 10px;">May 2026 – Present</span>
+            <ul>
+                <li>Engaging with aerospace professionals and actively preparing to participate in aircraft design competitions such as Design/Build/Fly (DBF) in Fall 2026.</li>
+            </ul>
+        </div>
+    </section>
+
     <section id="projects">
         <h2 class="section-title">Academic & Research Projects</h2>
         
@@ -569,219 +774,224 @@
                 <span class="mini-tag">Material Properties</span>
             </div>
         </div>
-    </section>
-    
-    <section id="experience">
-        <h2 class="section-title">Engineering Experience</h2>
 
         <div class="card">
-            <img src="images/ButlerParachutes.webp" alt="Butler Parachute Systems Logo" class="img-logo">
             <div class="card-header">
-                <h3>Engineering Intern</h3>
+                <h3>Space Law & Policy: Deep Space Travel Frameworks</h3>
             </div>
-            <div class="subtitle"><a href="https://www.butlerparachutes.com/" target="_blank" rel="noopener noreferrer">Butler Parachute Systems</a></div>
-            <span class="date" style="margin-top: 10px;">May 2026 – Aug 2026</span>
-            
-            <div class="case-study-grid">
-                <div class="case-text">
-                    <div class="case-section">
-                        <h4>Design & Prototyping</h4>
-                        <p>Designed a line continuity tool in SolidWorks, optimizing geometry to eliminate sharp edges and prevent cord snagging.</p>
-                    </div>
-                    <div class="case-section">
-                        <h4>Testing & Hardware</h4>
-                        <p>Engineered a custom load cell amplifier enclosure. Executed 150+ Mecmesin/hydraulic tensile tests and performed 10 operational drop tests.</p>
-                    </div>
-                    <div class="case-section">
-                        <h4>Quality Control</h4>
-                        <p>Developed a QC program referencing PIA documents and MIL-STD-849D, improving inspection efficiency by 20%.</p>
-                    </div>
-                </div>
-                <div class="case-visual">
-                    <div class="image-placeholder">
-                        <span>[ Replace with SolidWorks CAD or Hardware Photo ]</span>
-                        <p style="font-size: 0.75rem; font-weight: 400; margin-top: 5px;">e.g., A render of the line continuity tool or load cell enclosure.</p>
-                    </div>
-                </div>
-            </div>
-
+            <div class="subtitle">Mission Integration Research Paper (NASA VASTS)</div>
+            <ul>
+                <li>Authored a comprehensive policy paper outlining legal frameworks for the STRIDE mission to Mars, including the Outer Space Treaty and Artemis Accords.</li>
+                <li>Evaluated regulatory compliance for nuclear thermal propulsion systems, cyber security protocols, and astronaut risk assessments (ALARA).</li>
+                <li><a href="Space Law & Policy.pdf" class="inline-link" target="_blank" rel="noopener noreferrer">View Published Paper (PDF)</a></li>
+            </ul>
             <div class="card-skills">
-                <span class="mini-tag">SolidWorks</span>
-                <span class="mini-tag">Mecmesin Testing</span>
-                <span class="mini-tag">MIL-STD-849D</span>
-                <span class="mini-tag">Quality Control</span>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="images/Screenshot 2026-08-27 131325.png" alt="GEOINT ISAC Patch" class="img-logo img-patch">
-            <div class="card-header">
-                <h3>Space Systems Intern</h3>
-            </div>
-            <div class="subtitle"><a href="https://geoint-isac.global" target="_blank" rel="noopener noreferrer">GEOINT ISAC (SpaceX / NASA Cohort)</a></div>
-            <span class="date" style="margin-top: 10px;">May 2026 – Aug 2026</span>
-            
-            <div class="case-section">
-                <h4>Research & Analysis</h4>
-                <p>Collaborated with NASA to evaluate critical infrastructure resilience and geospatial risk factors. Authored technical papers on climate-induced aviation density altitude penalties and evaluated LEO satellite constellation resilience (Starlink) to enhance disaster situational awareness.</p>
-            </div>
-
-            <div class="card-skills">
-                <span class="mini-tag">LEO Constellations</span>
-                <span class="mini-tag">Geospatial Intelligence</span>
-                <span class="mini-tag">Risk Assessment</span>
-                <span class="mini-tag">OSINT</span>
+                <span class="mini-tag">Space Law</span>
+                <span class="mini-tag">Regulatory Compliance</span>
+                <span class="mini-tag">Planetary Protection</span>
             </div>
         </div>
     </section>
 
-    <!-- NEW SANDBOX SECTION -->
-    <section id="sandbox">
-        <h2 class="section-title">Hardware Sandbox & Rapid Prototyping</h2>
+    <section id="awards">
+        <h2 class="section-title">Honors & Awards</h2>
         
         <div class="card">
             <div class="card-header">
-                <h3>Personal Fabrication & 3D Printing</h3>
+                <h3>Ray E. and Mary B. Epperly Family Fund Scholarship</h3>
             </div>
-            <div class="subtitle">Bambu Lab P2S | Fusion 360 | Inventor</div>
-            
-            <div class="case-study-grid">
-                <div class="case-text">
-                    <p style="margin-top: 10px;">Beyond the classroom, I am an active maker. I utilize my Bambu Lab P2S to rapidly prototype custom mechanical assemblies and iterate on personal designs.</p>
-                    <p>I rely on Fusion 360, SolidWorks, and Autodesk Inventor for parametric modeling, bridging the gap between theoretical physics and physical, functional hardware.</p>
-                </div>
-                <div class="case-visual">
-                    <div class="image-placeholder" style="border-color: var(--accent-color); color: var(--accent-color);">
-                        <span>[ Replace with Photos of 3D Prints / Assemblies ]</span>
-                        <p style="font-size: 0.75rem; font-weight: 400; margin-top: 5px;">Show off your coolest mechanical builds here!</p>
-                    </div>
-                </div>
+            <div class="subtitle"><a href="https://cfnrv.org/" target="_blank" rel="noopener noreferrer">Community Foundation of the New River Valley</a></div>
+            <span class="date" style="margin-top: 10px;">May 2024</span>
+            <p style="margin: 5px 0 0;">Awarded in recognition of academic integrity, scholastic excellence, and dedication to engineering studies. Featured in the <a href="https://cfnrv.org/congratulations-to-our-2024-scholarship-recipients/" target="_blank" rel="noopener noreferrer" class="inline-link">CFNRV 2024 Scholarship Recipients Announcement</a>.</p>
+            <div class="card-gallery">
+                <img src="images/2024_Portrait.jpg" alt="Scholarship Portrait">
+                <img src="images/Ceremony.jpg" alt="Scholarship Ceremony">
             </div>
+        </div>
 
-            <div class="card-skills">
-                <span class="mini-tag">3D Printing</span>
-                <span class="mini-tag">Rapid Prototyping</span>
-                <span class="mini-tag">Parametric Modeling</span>
-                <span class="mini-tag">Mechanical Assemblies</span>
+        <div class="card">
+            <div class="card-header">
+                <h3>Steel Dynamics Scholarship</h3>
             </div>
+            <div class="subtitle"><a href="https://steeldynamics.com/" target="_blank" rel="noopener noreferrer">Steel Dynamics, Inc.</a></div>
+            <span class="date" style="margin-top: 10px;">May 2024</span>
+            <p style="margin: 5px 0 0;">Awarded to support undergraduate studies based on excellent academic achievement.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h3>President’s Award for Educational Excellence</h3>
+            </div>
+            <div class="subtitle">U.S. Department of Education</div>
+            <span class="date" style="margin-top: 10px;">May 2024</span>
+            <p style="margin: 5px 0 0;">Recognized for outstanding academic excellence, maintaining a high cumulative grade point average, and demonstrating a commitment to rigorous coursework.</p>
+        </div>
+
+        <div class="card">
+            <img src="2024_Senior_of_the_Month.png" alt="Senior of the Month 2024" style="float: right; max-width: 180px; border-radius: 8px; margin: 0 0 15px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+            <div class="card-header">
+                <h3>Senior of the Month</h3>
+            </div>
+            <div class="subtitle">Eastern Montgomery High School</div>
+            <span class="date" style="margin-top: 10px;">Jan 2024</span>
+            <p style="margin: 5px 0 0;">Selected for demonstrating strong performance both in the classroom and through contributions to extracurricular and community activities, particularly in STEM.</p>
         </div>
     </section>
 
-    <!-- COMPACT CREDENTIALS SECTION -->
-    <section id="credentials">
-        <h2 class="section-title">Credentials, Honors & Extracurriculars</h2>
+    <section id="volunteering">
+        <h2 class="section-title">Volunteering</h2>
+        
+        <div class="card">
+            <div class="card-header">
+                <h3>Warehouse Assistant</h3>
+            </div>
+            <div class="subtitle"><a href="https://www.mcps.org/" target="_blank" rel="noopener noreferrer">Montgomery County (VA) Public Schools</a></div>
+            <span class="date" style="margin-top: 10px;">Jul 2025 - Aug 2025</span>
+            <ul>
+                <li>Maintained facility operations and cleanliness, demonstrating a strong work ethic, reliability, and attention to detail.</li>
+                <li>Worked independently and collaboratively with a team.</li>
+                <li>Managed time efficiently to ensure a safe, organized environment for incoming students and staff by delivering teachers' orders to their classrooms.</li>
+            </ul>
+        </div>
 
-        <details open>
-            <summary>Leadership & Extracurriculars</summary>
+        <div class="card">
+            <div class="card-header">
+                <h3>Farmhand</h3>
+            </div>
+            <div class="subtitle"><a href="https://sinklandfarms.com/" target="_blank" rel="noopener noreferrer">Sinkland Farms, LLC</a></div>
+            <span class="date" style="margin-top: 10px;">Jul 2024 - Oct 2025</span>
+            <ul>
+                <li>Executed outdoor maintenance and groundskeeping tasks, showcasing adaptability and a willingness to take on hands-on, physical work.</li>
+                <li>Collaborated effectively with farm staff and other volunteers to ensure smooth operations of the grounds during festival time and off normal operating hours.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <h2 class="section-title">Verified Training & Certifications</h2>
+
+        <details>
+            <summary>Aviation & Engineering Certifications</summary>
             <div class="details-content">
-                <div style="margin-bottom: 20px;">
-                    <strong>Space Law & Policy Specialist | <a href="https://vsgc.odu.edu/vasts/" target="_blank" class="inline-link">NASA Langley VASTS</a></strong><br>
-                    <span style="font-size: 0.9rem; color: #94a3b8;">Authored a comprehensive policy paper outlining legal frameworks (Outer Space Treaty, Artemis Accords) and regulatory compliance (ALARA) for the STRIDE mission to Mars. Led ~50 scholars across four teams. <a href="Space Law & Policy.pdf" class="inline-link" target="_blank">[View Published Paper]</a></span>
-                    <br><img src="images/NASA_Picture.jpg" alt="NASA Langley Research Center" style="max-width: 150px; border-radius: 8px; margin-top: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-                </div>
-                <div style="margin-bottom: 20px;">
-                    <strong>Commissioner of Revenue | <a href="https://www.vaboysstate.org/" target="_blank" class="inline-link">Virginia Boys State</a> (Jun 2023)</strong><br>
-                    <span style="font-size: 0.9rem; color: #94a3b8;">Elected by peers to manage tax policies and municipal budgeting for the simulated city of Burke.</span>
-                    <div class="card-gallery" style="margin-top: 10px;">
-                        <img src="images/Boys_State_Certificate.jpg" alt="Boys State Certificate" style="height: 100px;">
-                        <img src="images/City_of_Burke.jpg" alt="City of Burke Delegates" style="height: 100px;">
-                        <img src="images/Keynote_Assembly.jpg" alt="Keynote Assembly" style="height: 100px;">
-                    </div>
-                </div>
-                <div>
-                    <strong>Student Member | <a href="https://www.aiaa.org/" target="_blank" class="inline-link">AIAA</a> (May 2026 – Present)</strong><br>
-                    <span style="font-size: 0.9rem; color: #94a3b8;">Preparing to participate in the aircraft Design/Build/Fly (DBF) competition in Fall 2026.</span>
-                </div>
+                <ul>
+                    <li><strong>Nafi - Scalable Safety Management Systems</strong> (FAA) | May 2026 – <a href="Scalable Safety Management Systems.pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
+                    <li><strong>The Recreational UAS Safety Test (TRUST)</strong> (FAA) | Apr 2026 – <a href="TRUST Certificate.pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
+                    <li><strong>Topology Optimization Using Ansys Mechanical</strong> (Ansys) | Apr 2026 – <a href="Ansys Course Completion - Topology Optimization Using Ansys Mechanical.pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
+                    <li><strong>Canva For Beginners</strong> (Simplilearn) | Jul 2026 – <a href="Canva For Beginners.pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
+                </ul>
             </div>
         </details>
 
         <details>
-            <summary>Honors & Awards</summary>
+            <summary>Atmospheric Science & Space Weather</summary>
             <div class="details-content">
-                <ul style="list-style-type: none; padding: 0;">
-                    <li style="margin-bottom: 15px;">
-                        <strong>Ray E. and Mary B. Epperly Family Fund Scholarship</strong> (May 2024)<br>
-                        <span style="font-size: 0.9rem; color: #94a3b8;">Awarded by CFNRV for scholastic excellence and dedication to engineering. <a href="https://cfnrv.org/congratulations-to-our-2024-scholarship-recipients/" target="_blank" class="inline-link">[Press Link]</a></span>
-                        <div class="card-gallery" style="margin-top: 10px;">
-                            <img src="images/2024_Portrait.jpg" alt="Scholarship Portrait" style="height: 120px;">
-                            <img src="images/Ceremony.jpg" alt="Scholarship Ceremony" style="height: 120px;">
-                        </div>
-                    </li>
-                    <li style="margin-bottom: 15px;">
-                        <strong>Steel Dynamics Scholarship</strong> (May 2024)<br>
-                        <span style="font-size: 0.9rem; color: #94a3b8;">Awarded to support undergraduate studies based on excellent academic achievement.</span>
-                    </li>
-                    <li style="margin-bottom: 15px;">
-                        <strong>President’s Award for Educational Excellence</strong> (May 2024)<br>
-                        <span style="font-size: 0.9rem; color: #94a3b8;">U.S. Department of Education recognition for a high cumulative GPA and rigorous coursework.</span>
-                    </li>
-                    <li>
-                        <strong>Senior of the Month</strong> (Jan 2024)<br>
-                        <span style="font-size: 0.9rem; color: #94a3b8;">Eastern Montgomery High School recognition for STEM leadership and community involvement.</span>
-                        <br><img src="images/2024_Senior_of_the_Month.png" alt="Senior of the Month" style="max-width: 120px; border-radius: 8px; margin-top: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-                    </li>
+                <ul>
+                    <li><strong>Alberta Clipper Case Exercise</strong> (COMET) | Jul 2026 – <a href="Alberta Clipper Case Exercise.pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
+                    <li><strong>Basic Satellite Imagery Interpretation</strong> (COMET) | Jul 2026 – <a href="Basic Satellite Imagery Interpretation_COMET Course Certificate - ENGLISH - DEFAULT 6.19.25.pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
+                    <li><strong>Communicating Climate Change Scenarios</strong> (COMET) | Jun 2026 – <a href="Communicating Climate Change Scenarios With Decision Makers Lecture by Dr. Holly Hartmann, Research Hydrologist.pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
+                    <li><strong>COSMIC: Atmospheric Remote Sensing</strong> (COMET) | May 2026 – <a href="COSMIC Atmospheric Remote Sensing for Weather Climate and the Ionosphere - COMET Course Certificate.pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
+                    <li><strong>Facilitating Stakeholder Discussions</strong> (COMET) | Jul 2026 – <a href="Facilitating Stakeholder Discussions to Improve Impact-Based Forecasting Approaches.pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
+                    <li><strong>Geospatial Infrastructure for Coastal Communities: Informing Adaptation to Sea Level Rise</strong> | 2026 – <a href="Geospatial Infrastructure for Coastal Communities Informing Adaptation to Sea Level Rise.pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
+                    <li><strong>Met 101: Introduction to the Atmosphere</strong> (COMET) | Jun 2026 – <a href="Met 101 Introduction to the Atmosphere.pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
+                    <li><strong>Radio Wave Propagation</strong> (COMET) | Aug 2026 – <a href="Radio Wave Propagation.pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
+                    <li><strong>Satellite Remote Sensing Capabilities for Ocean Color</strong> (COMET) | May 2026 – <a href="Satellite Remote Sensing Capabilities for Ocean Color - COMET Course Certificate .pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
+                    <li><strong>Space Weather Basics, 3rd Edition</strong> (COMET) | Aug 2026 – <a href="Space Weather Basics.pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
+                    <li><strong>Using Climatological Products in Common Operations</strong> (COMET) | Jul 2026 – <a href="Using Climatological Products in Common Operations.pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
                 </ul>
             </div>
         </details>
 
         <details>
-            <summary>Engineering & Software Certifications</summary>
-            <div class="details-content" style="font-size: 0.9rem;">
-                <p><strong>Aviation & Modeling</strong></p>
-                <ul style="margin-top: 5px; margin-bottom: 15px;">
-                    <li>Nafi - Scalable Safety Management Systems (FAA) | <a href="Scalable Safety Management Systems.pdf" target="_blank" class="inline-link">View PDF</a></li>
-                    <li>The Recreational UAS Safety Test - TRUST (FAA) | <a href="TRUST Certificate.pdf" target="_blank" class="inline-link">View PDF</a></li>
-                    <li>Topology Optimization Using Ansys Mechanical (Ansys) | <a href="Ansys Course Completion - Topology Optimization Using Ansys Mechanical.pdf" target="_blank" class="inline-link">View PDF</a></li>
-                    <li>Canva For Beginners (Simplilearn) | <a href="Canva For Beginners.pdf" target="_blank" class="inline-link">View PDF</a></li>
-                </ul>
-                <p><strong>IT, AI & Data Analysis</strong></p>
-                <ul style="margin-top: 5px;">
-                    <li>A Quick Introduction to Machine Learning (Cognitive Class) | <a href="Intro to Machine Learning.pdf" target="_blank" class="inline-link">View PDF</a></li>
-                    <li>Building AI-Powered Chatbots Without Coding (IBM) | <a href="BuildingAI-PoweredChatbotsWithoutCoding_Badge20260821-20-va0vsv.pdf" target="_blank" class="inline-link">View PDF</a></li>
-                    <li>Interactive Dashboards and Data Visualization in Excel (Alison) | <a href="Intro to Data Visualization.jpg" target="_blank" class="inline-link">View JPG</a></li>
-                    <li>Introduction to Image Generation (Simplilearn) | <a href="Ryan_Epperly_Introduction_to_Image_Generation.pdf" target="_blank" class="inline-link">View PDF</a></li>
-                    <li>IT Management - Building Information Systems (Alison) | <a href="IT Management - Building Information Systems.png" target="_blank" class="inline-link">View PNG</a></li>
-                    <li>Information Systems Development and Society (Alison) | <a href="Information Systems Development and Society.png" target="_blank" class="inline-link">View PNG</a></li>
-                    <li>Fundamentals of Open-Source Intelligence (Alison) | <a href="Fundamentals of Open-Source Intelligence (OSINT).png" target="_blank" class="inline-link">View PNG</a></li>
-                    <li>Root Cause Analysis Tools and Techniques (Alison) | <a href="Root Cause Analysis Tools and Techniques.png" target="_blank" class="inline-link">View PNG</a></li>
+            <summary>Emergency Management & Operations</summary>
+            <div class="details-content">
+                <ul>
+                    <li><strong>IS-66: Preparing the Nation for Space Weather Events</strong> (FEMA) | Apr 2026 – <a href="IS-66_certificate_Space_Weather.pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
+                    <li><strong>IS-111.a: Livestock in Disasters</strong> (FEMA) | May 2026 – <a href="IS-111 Livestock in Disasters.pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
+                    <li><strong>IS-120.c: An Introduction to Exercises</strong> (FEMA) | Aug 2026 – <a href="IS-120.c_certificate_An Introduction to Exercises.pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
+                    <li><strong>IS-130.a: How to be an Exercise Evaluator</strong> (FEMA) | Aug 2026 – <a href="IS-130.a_certificate_How to be an Exercise Evaluator .pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
+                    <li><strong>IS-235.c: Emergency Planning</strong> (FEMA) | Aug 2026 – <a href="IS-235.c_certificate_Emergency Planning.pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
+                    <li><strong>IS-238: Critical Concepts of Supply Chain Flow</strong> (FEMA) | Jul 2026 – <a href="IS-00238 Critical Concepts of Supply Chain Flow and Resilience.pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
+                    <li><strong>IS-247.c: Integrated Public Alert and Warning System (IPAWS) for Alert Originators</strong> (FEMA) | Jul 2026 – <a href="IS-00247c Integrated Public Alert and Warning System (IPAWS) for Alert Originators.pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
+                    <li><strong>IS-288.a: Role of Voluntary Organizations</strong> (FEMA) | Jul 2026 – <a href="IS-288_The Role of Voluntary Organizations in Emergency Management.pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
+                    <li><strong>IS-700.b: National Incident Management System</strong> (FEMA) | Jul 2026 – <a href="IS-700.b_certificate_0010004215.pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
+                    <li><strong>IS-922.a: Applications of GIS for Emergency Management</strong> (FEMA) | Jun 2026 – <a href="IS-922.a Applications of GIS for Emergency Management.pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
+                    <li><strong>IS-1300.a: Introduction to Continuity</strong> (FEMA) | Aug 2026 – <a href="IS-1300.a_certificate_Introduction to Continuity.pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
                 </ul>
             </div>
         </details>
 
         <details>
-            <summary>Space Weather & Emergency Management Certifications</summary>
-            <div class="details-content" style="font-size: 0.9rem;">
-                <p><strong>Atmospheric Science (COMET)</strong></p>
-                <ul style="margin-top: 5px; margin-bottom: 15px;">
-                    <li>COSMIC: Atmospheric Remote Sensing | <a href="COSMIC Atmospheric Remote Sensing for Weather Climate and the Ionosphere - COMET Course Certificate.pdf" target="_blank" class="inline-link">View PDF</a></li>
-                    <li>Satellite Remote Sensing Capabilities for Ocean Color | <a href="Satellite Remote Sensing Capabilities for Ocean Color - COMET Course Certificate .pdf" target="_blank" class="inline-link">View PDF</a></li>
-                    <li>Space Weather Basics, 3rd Edition | <a href="Space Weather Basics.pdf" target="_blank" class="inline-link">View PDF</a></li>
-                    <li>Radio Wave Propagation | <a href="Radio Wave Propagation.pdf" target="_blank" class="inline-link">View PDF</a></li>
-                    <li>Met 101: Introduction to the Atmosphere | <a href="Met 101 Introduction to the Atmosphere.pdf" target="_blank" class="inline-link">View PDF</a></li>
-                    <li>Alberta Clipper Case Exercise | <a href="Alberta Clipper Case Exercise.pdf" target="_blank" class="inline-link">View PDF</a></li>
-                    <li>Communicating Climate Change Scenarios | <a href="Communicating Climate Change Scenarios With Decision Makers Lecture by Dr. Holly Hartmann, Research Hydrologist.pdf" target="_blank" class="inline-link">View PDF</a></li>
-                    <li>Facilitating Stakeholder Discussions | <a href="Facilitating Stakeholder Discussions to Improve Impact-Based Forecasting Approaches.pdf" target="_blank" class="inline-link">View PDF</a></li>
-                    <li>Using Climatological Products in Common Operations | <a href="Using Climatological Products in Common Operations.pdf" target="_blank" class="inline-link">View PDF</a></li>
-                </ul>
-                <p><strong>Emergency Operations (FEMA / Other)</strong></p>
-                <ul style="margin-top: 5px;">
-                    <li>IS-66: Preparing the Nation for Space Weather Events | <a href="IS-66_certificate_Space_Weather.pdf" target="_blank" class="inline-link">View PDF</a></li>
-                    <li>IS-111.a: Livestock in Disasters | <a href="IS-111 Livestock in Disasters.pdf" target="_blank" class="inline-link">View PDF</a></li>
-                    <li>IS-120.c: An Introduction to Exercises | <a href="IS-120.c_certificate_An Introduction to Exercises.pdf" target="_blank" class="inline-link">View PDF</a></li>
-                    <li>IS-130.a: How to be an Exercise Evaluator | <a href="IS-130.a_certificate_How to be an Exercise Evaluator .pdf" target="_blank" class="inline-link">View PDF</a></li>
-                    <li>IS-235.c: Emergency Planning | <a href="IS-235.c_certificate_Emergency Planning.pdf" target="_blank" class="inline-link">View PDF</a></li>
-                    <li>IS-238: Critical Concepts of Supply Chain Flow | <a href="IS-00238 Critical Concepts of Supply Chain Flow and Resilience.pdf" target="_blank" class="inline-link">View PDF</a></li>
-                    <li>IS-247.c: IPAWS for Alert Originators | <a href="IS-00247c Integrated Public Alert and Warning System (IPAWS) for Alert Originators.pdf" target="_blank" class="inline-link">View PDF</a></li>
-                    <li>IS-288.a: Role of Voluntary Organizations | <a href="IS-288_The Role of Voluntary Organizations in Emergency Management.pdf" target="_blank" class="inline-link">View PDF</a></li>
-                    <li>IS-700.b: National Incident Management System | <a href="IS-700.b_certificate_0010004215.pdf" target="_blank" class="inline-link">View PDF</a></li>
-                    <li>IS-922.a: Applications of GIS for Emergency Management | <a href="IS-922.a Applications of GIS for Emergency Management.pdf" target="_blank" class="inline-link">View PDF</a></li>
-                    <li>IS-1300.a: Introduction to Continuity | <a href="IS-1300.a_certificate_Introduction to Continuity.pdf" target="_blank" class="inline-link">View PDF</a></li>
-                    <li>Analyze Satellite Data to Investigate Plant Health (IBM) | <a href="Analyze Satellite Data to Investigate Plant Health.png" target="_blank" class="inline-link">View PNG</a></li>
-                    <li>Geospatial Infrastructure for Coastal Communities | <a href="Geospatial Infrastructure for Coastal Communities Informing Adaptation to Sea Level Rise.pdf" target="_blank" class="inline-link">View PDF</a></li>
+            <summary>Information Technology & Data Analysis</summary>
+            <div class="details-content">
+                <ul>
+                    <li><strong>A Quick Introduction to Machine Learning</strong> (Cognitive Class) | Aug 2026 – <a href="Intro to Machine Learning.pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
+                    <li><strong>Analyze Satellite Data to Investigate Plant Health</strong> (IBM) | 2026 – <a href="Analyze Satellite Data to Investigate Plant Health.png" target="_blank" class="inline-link">View Certificate (PNG)</a></li>
+                    <li><strong>Building AI-Powered Chatbots Without Coding</strong> (IBM) | Aug 2026 – <a href="BuildingAI-PoweredChatbotsWithoutCoding_Badge20260821-20-va0vsv.pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
+                    <li><strong>Fundamentals of Open-Source Intelligence (OSINT)</strong> (Alison) | Aug 2026 – <a href="Fundamentals of Open-Source Intelligence (OSINT).png" target="_blank" class="inline-link">View Certificate (PNG)</a></li>
+                    <li><strong>Information Systems Development and Society</strong> (Alison) | Aug 2026 – <a href="Information Systems Development and Society.png" target="_blank" class="inline-link">View Certificate (PNG)</a></li>
+                    <li><strong>Interactive Dashboards and Data Visualization in Excel</strong> (Alison) | Aug 2026 – <a href="Intro to Data Visualization.jpg" target="_blank" class="inline-link">View Certificate (JPG)</a></li>
+                    <li><strong>Introduction to Image Generation</strong> (Simplilearn) | Jul 2026 – <a href="Ryan_Epperly_Introduction_to_Image_Generation.pdf" target="_blank" class="inline-link">View Certificate (PDF)</a></li>
+                    <li><strong>IT Management - Building Information Systems</strong> (Alison) | Aug 2026 – <a href="IT Management - Building Information Systems.png" target="_blank" class="inline-link">View Certificate (PNG)</a></li>
+                    <li><strong>Root Cause Analysis Tools and Techniques</strong> (Alison) | Aug 2026 – <a href="Root Cause Analysis Tools and Techniques.png" target="_blank" class="inline-link">View Certificate (PNG)</a></li>
                 </ul>
             </div>
         </details>
+    </section>
 
+    <section id="skills">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="card">
+            <div class="tag-group">
+                <div class="tag-title">Aerospace & Dynamics</div>
+                <ul class="tags">
+                    <li>Orbital Mechanics</li>
+                    <li>State Estimation</li>
+                    <li>Extended Kalman Filters (EKF)</li>
+                    <li>Guidance Navigation & Control (GNC)</li>
+                    <li>Aerodynamics</li>
+                    <li>Longitudinal Static Stability Analysis</li>
+                    <li>Aircraft Trim & Equilibrium</li>
+                </ul>
+            </div>
+            <div class="tag-group">
+                <div class="tag-title">Software & Programming</div>
+                <ul class="tags">
+                    <li>MATLAB</li>
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>GNU Octave</li>
+                </ul>
+            </div>
+            <div class="tag-group">
+                <div class="tag-title">CAD, Simulation & FEA</div>
+                <ul class="tags">
+                    <li>SolidWorks</li>
+                    <li>AutoCAD</li>
+                    <li>Autodesk Inventor</li>
+                    <li>Fusion 360</li>
+                    <li>Ansys (Topology Optimization)</li>
+                </ul>
+            </div>
+            <div class="tag-group">
+                <div class="tag-title">Systems & Compliance</div>
+                <ul class="tags">
+                    <li>Safety Management Systems (SMS)</li>
+                    <li>Aerospace Regulations</li>
+                    <li>Risk Assessment</li>
+                    <li>Interagency Systems Coordination</li>
+                    <li>Open-Source Intelligence (OSINT)</li>
+                </ul>
+            </div>
+            <div class="tag-group">
+                <div class="tag-title">Hardware & Testing</div>
+                <ul class="tags">
+                    <li>3D Printing (Bambu Lab P2S)</li>
+                    <li>CNC Machining</li>
+                    <li>Mecmesin Tensile Testing</li>
+                    <li>Environmental Instrumentation</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
 </div>
