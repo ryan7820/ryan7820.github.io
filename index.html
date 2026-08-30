@@ -293,6 +293,28 @@
             letter-spacing: 0.5px;
         }
 
+        /* New Image Gallery CSS for multiple photos in a card */
+        .card-gallery {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            overflow-x: auto;
+            padding-bottom: 5px;
+        }
+
+        .card-gallery img {
+            height: 180px;
+            width: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .card-gallery img:hover {
+            transform: scale(1.03);
+        }
+
         details {
             background: var(--card-bg);
             border-radius: 12px;
@@ -570,6 +592,12 @@
                 <li>Elected by peers in Burke City to manage tax policies and revenue generation for the simulated city of Burke.</li>
                 <li>Collaborated with the city council and state officials to allocate funds and balance the municipal budget.</li>
             </ul>
+            <!-- New Image Gallery for Boys State -->
+            <div class="card-gallery">
+                <img src="images/Boys_State_Certificate.jpg" alt="Boys State Certificate">
+                <img src="images/City_of_Burke.jpg" alt="City of Burke Delegates">
+                <img src="images/Keynote_Assembly.jpg" alt="Keynote Assembly">
+            </div>
         </div>
 
         <div class="card">
@@ -651,6 +679,11 @@
             <div class="subtitle"><a href="https://cfnrv.org/" target="_blank" rel="noopener noreferrer">Community Foundation of the New River Valley</a></div>
             <span class="date" style="margin-top: 10px;">May 2024</span>
             <p style="margin: 5px 0 0;">Awarded in recognition of academic integrity, scholastic excellence, and dedication to engineering studies. Featured in the <a href="https://cfnrv.org/congratulations-to-our-2024-scholarship-recipients/" target="_blank" rel="noopener noreferrer" class="inline-link">CFNRV 2024 Scholarship Recipients Announcement</a>.</p>
+            <!-- New Image Gallery for Scholarship -->
+            <div class="card-gallery">
+                <img src="images/2024_Portrait.jpg" alt="Scholarship Portrait">
+                <img src="images/Ceremony.jpg" alt="Scholarship Ceremony">
+            </div>
         </div>
 
         <div class="card">
