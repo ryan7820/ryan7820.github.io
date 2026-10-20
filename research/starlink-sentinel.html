@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Starlink Sentinel: an independent MATLAB spacecraft orbital simulation featuring J2 perturbations, an extended Kalman filter, and prototype collision-avoidance logic.">
+  <meta property="og:title" content="Starlink Sentinel | Ryan Epperly">
+  <meta property="og:description" content="An engineering case study of MATLAB orbital propagation, spacecraft state estimation, and prototype collision-avoidance control.">
+  <meta property="og:type" content="article">
+  <title>Starlink Sentinel — Engineering Case Study | Ryan Epperly</title>
+  <style>
+    :root { color-scheme: dark; --bg:#050814; --card:#0f172a; --ink:#e2e8f0; --muted:#a8b8cd; --accent:#38bdf8; --border:#263347; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin:0; font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.7; background:var(--bg); color:var(--ink); }
+    a { color:var(--accent); text-underline-offset:3px; }
+    a:hover { color:#7dd3fc; }
+    a:focus-visible { outline:3px solid var(--accent); outline-offset:4px; border-radius:3px; }
+    header { border-bottom:1px solid var(--border); background:linear-gradient(135deg,#07172b,#050814); }
+    .shell { max-width:990px; padding:0 22px; margin:auto; }
+    .topbar { padding:18px 0; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; align-items:center; }
+    .topbar a { text-decoration:none; font-weight:650; }
+    .hero { padding:34px 0 48px; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.12em; font-size:.78rem; font-weight:750; color:var(--accent); }
+    h1 { font-size:clamp(2.1rem,5.5vw,3.6rem); line-height:1.16; margin:12px 0 16px; color:#fff; }
+    .lead { font-size:1.13rem; max-width:790px; color:#cbd5e1; }
+    h2 { color:#fff; font-size:1.55rem; margin:34px 0 12px; line-height:1.25; }
+    h3 { color:#f8fafc; font-size:1.12rem; }
+    p { margin:0 0 14px; }
+    main { padding:25px 0 68px; }
+    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:24px; }
+    .summary, .panel { border:1px solid var(--border); background:var(--card); border-radius:12px; padding:20px; }
+    .summary strong { color:#fff; display:block; }
+    .summary span { display:block; color:var(--muted); font-size:.9rem; margin-top:5px; }
+    .notice { padding:18px 20px; border-left:3px solid var(--accent); background:#0b1c30; border-radius:0 10px 10px 0; margin:22px 0; }
+    .notice strong { color:#f8fafc; }
+    .columns { display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+    figure { margin:24px 0; }
+    figure img { width:100%; height:auto; border:1px solid var(--border); border-radius:12px; }
+    figcaption { color:var(--muted); font-size:.87rem; padding:5px 2px; }
+    pre { overflow-x:auto; padding:16px; border:1px solid var(--border); border-radius:8px; background:#060f20; white-space:pre-wrap; overflow-wrap:anywhere; color:#d8e6f5; }
+    code { color:#8fe0ff; }
+    ul { padding-left:22px; }
+    li { margin:7px 0; }
+    .actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:18px; }
+    .button { display:inline-block; background:var(--accent); color:#061522; border-radius:7px; padding:11px 17px; font-weight:800; text-decoration:none; }
+    .button:hover { background:#7dd3fc; color:#061522; }
+    .button.secondary { border:1px solid #34516b; color:#e2e8f0; background:transparent; }
+    footer { border-top:1px solid var(--border); color:var(--muted); text-align:center; font-size:.87rem; padding:26px; }
+    @media(max-width:700px) { .grid,.columns { grid-template-columns:1fr; } .hero { padding:22px 0 34px; } .shell { padding:0 18px; } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="shell">
+      <div class="topbar"><a href="../index.html#projects">← Back to Research Portfolio</a><a href="https://github.com/ryan7820/LEO-Collision-Avoidance-EKF" target="_blank" rel="noopener noreferrer">MATLAB Source Code ↗</a></div>
+      <div class="hero">
+        <div class="eyebrow">Independent engineering case study · May 2026</div>
+        <h1>Starlink Sentinel</h1>
+        <p class="lead">A MATLAB proof-of-concept for low-Earth-orbit trajectory simulation, debris state estimation, and autonomous collision-avoidance logic.</p>
+        <div class="actions"><a class="button" href="https://github.com/ryan7820/LEO-Collision-Avoidance-EKF/blob/main/Starlink_Sentinel.m" target="_blank" rel="noopener noreferrer">Review the actual code ↗</a><a class="button secondary" href="#method">Explore the methodology ↓</a></div>
+      </div>
+    </div>
+  </header>
+  <main class="shell">
+    <div class="grid" aria-label="Key simulation parameters">
+      <div class="summary"><strong>6-state orbital model</strong><span>3 position + 3 velocity states; not a full attitude 6-DOF model</span></div>
+      <div class="summary"><strong>5-second time step</strong><span>RK4 numerical propagation over 3,000 seconds</span></div>
+      <div class="summary"><strong>EKF + prototype control</strong><span>Noisy position observations and bounded along-track acceleration</span></div>
+    </div>
+    <div class="notice"><strong>Status: Independent computational prototype.</strong> This page documents the methods implemented in the linked source code. It is not a peer-reviewed publication or a validated flight-software system. Rigorous performance results and controlled-vs-uncontrolled benchmarking remain future work.</div>
+    <section aria-labelledby="objective">
+      <h2 id="objective">Engineering objective</h2>
+      <p>Investigate how a small-satellite orbit model could combine estimated debris motion with a proximity-triggered avoidance maneuver. The MATLAB script propagates spacecraft and debris states, generates noisy synthetic position measurements, and uses an extended Kalman filter (EKF) to estimate the debris state.</p>
+    </section>
+    <section id="method" aria-labelledby="method-heading">
+      <h2 id="method-heading">Methods and governing model</h2>
+      <div class="columns">
+        <div class="panel">
+          <h3>1 · Orbit propagation</h3>
+          <p>The state vector is <code>x = [r_x, r_y, r_z, v_x, v_y, v_z]ᵀ</code>. A fourth-order Runge–Kutta (RK4) integrator propagates both objects using two-body gravity with J2 perturbations.</p>
+          <p>The modeled orbit uses approximately 550 km initial satellite altitude, with the debris initialized separately.</p>
+        </div>
+        <div class="panel">
+          <h3>2 · State estimation</h3>
+          <p>A simulated sensor supplies Cartesian debris position observations corrupted by Gaussian noise (50 m standard deviation per axis). The EKF predicts the debris trajectory and updates its state with each measurement.</p>
+          <p>Its covariance transition uses a truncated state-transition approximation linearized from central gravity; the script does not include J2 partial derivatives in that transition.</p>
+        </div>
+        <div class="panel">
+          <h3>3 · Avoidance heuristic</h3>
+          <p>A proximity threshold of 2,500 m triggers a bounded along-track thrust acceleration, with an upper limit of <code>0.005 m/s²</code>. The feedback magnitude depends on separation error and relative-speed magnitude.</p>
+          <p>This is a simple PD-inspired heuristic, not a fully designed LQR controller or operational collision-probability algorithm.</p>
+        </div>
+        <div class="panel">
+          <h3>4 · Telemetry</h3>
+          <p>The script plots simulated trajectories, true and estimated spacecraft-to-debris separation, and EKF position-estimation error. These displays help inspect qualitative behavior; plots alone do not establish safety or robustness.</p>
+        </div>
+      </div>
+    </section>
+    <section aria-labelledby="visuals">
+      <h2 id="visuals">Simulation figures</h2>
+      <figure>
+        <img src="../images/Orbital%20Trajectories%20and%20Telemetry%20Performance%20Simulation.png" alt="MATLAB orbital trajectories and telemetry visualization" loading="lazy">
+        <figcaption>Existing output visualization from the project portfolio. See source code for how the model generates these plots.</figcaption>
+      </figure>
+      <figure>
+        <img src="../images/Estimation.png" alt="MATLAB extended Kalman filter estimation implementation screenshot" loading="lazy">
+        <figcaption>Estimation implementation image already included in the portfolio.</figcaption>
+      </figure>
+    </section>
+    <section aria-labelledby="validation">
+      <h2 id="validation">Validation questions and next experiments</h2>
+      <p>Before making quantitative claims about collision avoidance, the project should be extended with:</p>
+      <ul>
+        <li>A no-control baseline and a logged minimum true separation for each simulation.</li>
+        <li>Repeatable random seeds and Monte Carlo runs across different encounter geometries and sensor-noise levels.</li>
+        <li>RK4 time-step convergence checks and independent comparison with a trusted orbit propagator.</li>
+        <li>EKF consistency checks, including innovations and covariance stability.</li>
+        <li>Controller improvements that use signed closing rate or time-to-closest-approach rather than relative-speed magnitude alone.</li>
+        <li>Propellant or Δv accounting, maneuver feasibility constraints, and a more realistic observation model.</li>
+      </ul>
+      <p><strong>Important distinction:</strong> These are planned validation tests—not experimental results already obtained.</p>
+    </section>
+    <section aria-labelledby="sources">
+      <h2 id="sources">Code and reproducibility</h2>
+      <p>The complete MATLAB prototype is publicly available. This case study intentionally avoids inventing a success rate, a minimum miss distance, or other metrics not established by the linked source and recorded experiment outputs.</p>
+      <div class="actions"><a class="button" href="https://github.com/ryan7820/LEO-Collision-Avoidance-EKF" target="_blank" rel="noopener noreferrer">Open GitHub repository ↗</a><a class="button secondary" href="../index.html#projects">Return to projects</a></div>
+    </section>
+  </main>
+  <footer>© 2026 Ryan Epperly · Independent aerospace engineering project · Not an externally peer-reviewed paper</footer>
+</body>
+</html>
