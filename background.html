@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Background &amp; Credentials | Ryan Epperly</title>
-    <meta name="description" content="Leadership, hardware prototyping, honors, volunteering, technical skills, and training in aerospace engineering.">
+    <title>Full Story, Experience &amp; Education | Ryan Epperly</title>
+    <meta name="description" content="Explore my complete experience, education, leadership, engineering projects, previous restaurant work, honors, certifications, and interests.">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Background &amp; Credentials | Ryan Epperly">
+    <meta property="og:title" content="Full Story &amp; Background | Ryan Epperly">
     <meta property="og:description" content="Leadership, technical skills, engineering training, and experiences beyond my aerospace projects.">
     <meta property="og:url" content="https://ryanepperly.me/background.html">
     <meta name="theme-color" content="#050814">
@@ -555,18 +555,43 @@
         .background-shortcuts a { color:#7dd3fc; padding:5px 13px; border:1px solid #334155; border-radius:20px; text-decoration:none; font-size:.92rem; }
         .background-shortcuts a:hover { border-color:var(--accent-color); background:#0f2740; }
         @media(max-width:680px) { header { padding:30px 16px; } header h1 { font-size:2.1rem; } }
-    </style>
+    
+        .timeline-lead {max-width:760px; color:var(--text-muted); margin:0 0 22px;}
+        .life-card {background:var(--card-bg);border:1px solid #263449;border-radius:12px;padding:22px 24px;margin-bottom:18px;overflow:auto;}
+        .life-card h3 {margin:0 0 3px;color:#f8fafc;font-size:1.24rem;}
+        .life-card .when {display:inline-block;color:#93c5fd;font-weight:600;font-size:.91rem;margin:5px 0 12px;}
+        .life-card p {margin:0 0 12px;max-width:740px;}
+        .life-card .meta {color:#a4b7d0;font-size:.88rem;}
+        .life-card a {color:var(--accent-color);}
+        .life-card strong {color:#e2e8f0;}
+        .life-logo {width:88px;height:88px;object-fit:contain;float:right;margin:0 0 14px 22px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid #263449;}
+        .life-logo.round {border-radius:50%;background:transparent;}
+        .life-logo.large {width:102px;height:102px;}
+        .life-brand {float:right;display:flex;align-items:center;justify-content:center;width:108px;min-height:75px;margin:0 0 14px 20px;border-radius:10px;border:1px solid #263449;background:#15243a;color:#edf5ff;letter-spacing:.01em;text-align:center;font-weight:800;font-size:1rem;padding:12px;}
+        .life-brand.macados {font-family:Georgia,serif;color:#f4ede0;border-color:#4d3c32;background:#211d1b;}
+        .life-brand.papa {color:#f3f5f2;background:#1d3427;border-color:#31553d;font-size:.91rem;}
+        .life-logo-with-fallback {float:right;display:flex;flex-direction:column;align-items:center;width:106px;margin:0 0 12px 20px;gap:4px;}
+        .life-logo-with-fallback img {width:96px;height:86px;object-fit:contain;border-radius:8px;}
+        .life-logo-with-fallback small {font-size:.67rem;color:#9db0c7;text-align:center;}
+        .chapter-intro {border:1px solid #263449;background:linear-gradient(130deg,#0f172a,#0c233b);border-radius:12px;padding:24px;margin:22px 0 26px;}
+        .chapter-intro h2 {color:#fff;margin:0 0 8px;}
+        .chapter-intro p {margin:0;}
+        .life-card:after {content:"";display:block;clear:both;}
+        @media(max-width:580px) { .life-card{padding:19px;} .life-logo{width:72px;height:72px;} .life-logo-with-fallback{width:85px;margin-left:12px;} .life-logo-with-fallback img{width:85px;height:80px;} .life-brand{width:78px;font-size:.78rem;} }
+</style>
 </head>
 <body>
 <nav aria-label="Main navigation">
     <a href="index.html">Home</a>
     <a href="index.html#research">Research</a>
-    <a href="index.html#experience">Experience</a>
+    <a href="projects.html">All Projects</a>
+    <a href="#work-history">Work History</a>
+    <a href="#all-education">Education</a>
     <a href="Ryan_Epperly_Engineering_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume ↗</a>
 </nav>
 <header>
-    <h1>Background &amp; Credentials</h1>
-    <p>Leadership, hardware, awards, service, and technical training</p>
+    <h1>The Full Story</h1>
+    <p>Engineering, education, early jobs, leadership, projects, and everything that shaped my path.</p>
     <div class="contact-bar">
        <a href="mailto:ryanepperly@vt.edu">Email</a>
        <span class="bullet">•</span>
@@ -577,6 +602,9 @@
        <a href="https://www.researchgate.net/profile/Ryan-Epperly" target="_blank" rel="noopener noreferrer">ResearchGate</a>
     </div>
     <div class="background-shortcuts">
+        <a href="#work-history">All Experience</a>
+        <a href="#all-education">Education</a>
+        <a href="projects.html">Projects</a>
         <a href="#extracurriculars">Leadership</a>
         <a href="#sandbox">Hardware</a>
         <a href="#awards">Honors</a>
@@ -586,6 +614,106 @@
     </div>
 </header>
 <div class="container">
+
+<section id="work-history" aria-labelledby="work-title">
+    <h2 class="section-title" id="work-title">Complete Work &amp; Program Experience</h2>
+    <p class="timeline-lead">From high-volume restaurant shifts to spacecraft systems and aerospace hardware, every experience taught me something about working with people, solving problems, and following through.</p>
+
+    <article class="life-card">
+      <img class="life-logo round" src="images/Screenshot 2026-08-27 131325.png" alt="GEOINT-ISAC organization badge" loading="lazy">
+      <h3>Space Systems Intern</h3>
+      <div class="meta"><a href="https://geoint-isac.global/" target="_blank" rel="noopener noreferrer">International Association of Certified ISAOs (IACI) · GEOINT-ISAC division</a> · Remote · Internship</div>
+      <span class="when">May 2026 – Oct 2026</span>
+      <p>Researched geospatial risk and critical infrastructure resilience for NASA-related Project Gestalt work, including aviation density-altitude impacts, meteorological factors, and emergency response frameworks. Examined satellite communications resilience and its role in restoring situational awareness after disasters.</p>
+      <p>Contributed research and Python-based risk-model development in support of a U.S. Space Force 460th Civil Engineer Squadron project, exploring how age, exposure, and proximity can inform infrastructure vulnerability forecasts.</p>
+      <div class="card-skills"><span class="mini-tag">Python</span><span class="mini-tag">GIS &amp; Meteorology</span><span class="mini-tag">Technical Writing</span><span class="mini-tag">Aerospace Systems</span></div>
+      <p class="meta">This describes project contributions; it does not imply direct employment by NASA or the Space Force. Employer research details are summarized at a non-sensitive level.</p>
+    </article>
+
+    <article class="life-card">
+      <img class="life-logo" src="images/ButlerParachutes.webp" alt="Butler Parachute Systems logo" loading="lazy">
+      <h3>Engineering Intern</h3>
+      <div class="meta"><a href="https://www.butlerparachutes.com/" target="_blank" rel="noopener noreferrer">Butler Parachute Systems, Inc.</a> · Roanoke, Virginia · On-site</div>
+      <span class="when">May 2026 – Aug 2026</span>
+      <p>Designed and refined a SolidWorks line-continuity tool to prevent cord snagging, developed a custom load-cell amplifier enclosure, and supported extensive tensile and operational drop testing.</p>
+      <p>Contributed to a quality-control process based on PIA documents and MIL-STD-849D, and gained hands-on experience with mechanical fabrication and FAA-supervised parachute rigging.</p>
+      <div class="card-skills"><span class="mini-tag">SolidWorks</span><span class="mini-tag">Mecmesin Testing</span><span class="mini-tag">Quality Control</span><span class="mini-tag">Hardware</span></div>
+    </article>
+
+    <article class="life-card">
+      <img class="life-logo" src="images/Blackwing.jpg" alt="Blackwing Space logo" loading="lazy" style="mix-blend-mode:screen;background:transparent;">
+      <h3>Regulatory Engineering Intern</h3>
+      <div class="meta"><a href="https://www.blackwingspace.com/" target="_blank" rel="noopener noreferrer">Blackwing Space</a> · Remote</div>
+      <span class="when">Mar 2026 – Aug 2026</span>
+      <p>Researched CubeSat subsystems, mission requirements, interface considerations, and technical documentation. Organized supporting FCC materials for satellite regulatory analysis and reviewed nanosatellite platform components.</p>
+      <div class="card-skills"><span class="mini-tag">CubeSats</span><span class="mini-tag">FCC Documentation</span><span class="mini-tag">Systems Engineering</span></div>
+    </article>
+
+    <article class="life-card">
+      <div class="life-brand macados" role="img" aria-label="Macado’s wordmark">Macado’s</div>
+      <h3>Deli Cook</h3>
+      <div class="meta"><a href="https://www.macados.net/" target="_blank" rel="noopener noreferrer">Macado's</a> · Christiansburg, Virginia · Full-time</div>
+      <span class="when">Feb 2024 – Apr 2025</span>
+      <p>Managed food preparation and kitchen operations in a busy restaurant environment. Coordinated with teammates during rushes to minimize ticket times and maintain consistent service. Received local deli MVP recognition for performance.</p>
+      <div class="card-skills"><span class="mini-tag">Teamwork</span><span class="mini-tag">Working Under Pressure</span><span class="mini-tag">Operations</span></div>
+    </article>
+
+    <article class="life-card">
+      <img class="life-logo" src="images/NASA_Picture.jpg" alt="Virginia Aerospace Science and Technology Scholars experience at NASA Langley" loading="lazy">
+      <h3>Space Law and Policy Specialist</h3>
+      <div class="meta"><a href="https://vsgc.odu.edu/vasts/" target="_blank" rel="noopener noreferrer">Virginia Space Grant Consortium · VASTS</a> · Hampton, Virginia · Hybrid student program</div>
+      <span class="when">Oct 2023 – Jun 2024</span>
+      <p>Completed the Virginia Aerospace Science and Technology Scholars program and attended the summer academy at NASA Langley. As Mission Integration’s Space Law and Policy Specialist, helped coordinate legal and policy planning across four teams comprising approximately 50 scholars.</p>
+      <p>Developed the STRIDE Mars mission policy framework addressing planetary protection, propulsion safety, international cooperation, and astronaut risk.</p>
+      <p><a class="inline-link" href="Space%20Law%20%26%20Policy.pdf" target="_blank" rel="noopener noreferrer">Read student mission policy paper ↗</a></p>
+      <div class="card-skills"><span class="mini-tag">Leadership</span><span class="mini-tag">Space Law</span><span class="mini-tag">Mission Policy</span></div>
+    </article>
+
+    <article class="life-card">
+      <div class="life-logo-with-fallback">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Papa_Johns_logo.svg" alt="Papa Johns wordmark" loading="lazy">
+        <small>Papa Johns</small>
+      </div>
+      <h3>Restaurant Crew Member</h3>
+      <div class="meta"><a href="https://www.papajohns.com/" target="_blank" rel="noopener noreferrer">Papa Johns</a> · Christiansburg, Virginia · Part-time</div>
+      <span class="when">Jan 2024 – Feb 2024</span>
+      <p>Prepared orders, maintained quality standards, and worked alongside teammates to deliver efficient customer service during peak hours.</p>
+      <div class="card-skills"><span class="mini-tag">Customer Service</span><span class="mini-tag">Team Collaboration</span><span class="mini-tag">Time Management</span></div>
+    </article>
+</section>
+
+<section id="all-education" aria-labelledby="education-title">
+  <h2 class="section-title" id="education-title">Complete Education</h2>
+  <article class="life-card">
+    <img class="life-logo" src="images/Virginia Tech Logo.jpg" alt="Virginia Tech logo" loading="lazy">
+    <h3>Virginia Tech</h3>
+    <div class="meta">B.S. Aerospace Engineering · Junior</div>
+    <span class="when">Jan 2026 – Expected May 2028</span>
+    <p>Academic focus: dynamics, control, and estimation, with a planned minor in mathematics. Coursework and laboratory experience includes engineering mechanics, system dynamics, aircraft analysis, and electronics instrumentation.</p>
+  </article>
+  <article class="life-card">
+    <img class="life-logo" src="images/NRCCwebp.webp" alt="New River Community College logo" loading="lazy">
+    <h3>New River Community College</h3>
+    <div class="meta">Associate of Science in Engineering · Certificate in General Studies</div>
+    <span class="when">Aug 2024 – Dec 2025</span>
+    <p>Graduated magna cum laude. Earned President’s List recognition in Spring and Fall 2025. Completed engineering and programming projects including water quality analysis, a pH sensor prototype, and MATLAB simulation work.</p>
+  </article>
+  <article class="life-card">
+    <div class="life-brand">EMHS</div>
+    <h3>Eastern Montgomery High School</h3>
+    <div class="meta">Advanced High School Diploma</div>
+    <span class="when">Aug 2020 – May 2024</span>
+    <p>Participated in Beta Club and FFA, attended Virginia Boys State, received Senior of the Month recognition in January 2024, and earned the President’s Award for Educational Excellence.</p>
+  </article>
+  <article class="life-card">
+    <div class="life-brand">VPCC</div>
+    <h3>Virginia Peninsula Community College</h3>
+    <div class="meta">Short-term coursework through VASTS · Reported 4.0 grade</div>
+    <span class="when">Oct 2023 – Apr 2024</span>
+    <p>Completed short-term academic coursework associated with the Virginia Aerospace Science and Technology Scholars program.</p>
+  </article>
+</section>
+
 <section id="extracurriculars">
         <h2 class="section-title">Extracurriculars & Leadership</h2>
         
