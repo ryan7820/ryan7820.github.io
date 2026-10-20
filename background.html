@@ -578,6 +578,26 @@
         .chapter-intro p {margin:0;}
         .life-card:after {content:"";display:block;clear:both;}
         @media(max-width:580px) { .life-card{padding:19px;} .life-logo{width:72px;height:72px;} .life-logo-with-fallback{width:85px;margin-left:12px;} .life-logo-with-fallback img{width:85px;height:80px;} .life-brand{width:78px;font-size:.78rem;} }
+        /* Preserve every logo's native artwork; never erase whites with filters. */
+        .life-logo { background:#fff; border-color:#d7dfe7; padding:7px; object-fit:contain; border-radius:12px; mix-blend-mode:normal!important;filter:none!important; }
+        .life-logo.round { background:#fff; border-radius:50%; }
+        .life-logo.logo-night { background:#080a0e; border-color:#324459; }
+        .life-logo-with-fallback {border:1px solid #d7dfe7;background:#fff;border-radius:10px;padding:8px;width:128px;}
+        .life-logo-with-fallback img{width:106px;height:53px;object-fit:contain;}
+        .life-logo-with-fallback small{color:#475569;}
+        .role-anchor {display:block;position:relative;top:-90px;height:0}
+        .story-map {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin:22px 0 28px}
+        .story-stop {display:flex;align-items:center;gap:13px;min-width:0;border-radius:12px;border:1px solid #2e4b64;background:#0e2940;padding:14px;color:#e3edf7;text-decoration:none;font-weight:700}
+        .story-stop:hover,.story-stop:focus-visible{background:#143951;border-color:#38bdf8}
+        .story-stop .story-icon{width:39px;height:39px;flex:none;border-radius:10px;background:#173d58;display:flex;align-items:center;justify-content:center;font-size:1.3rem}
+        .story-stop span:last-child{font-size:.92rem}
+        .credentials {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;clear:both;margin-top:18px}
+        .credential-item {padding:16px;background:#0c2439;border:1px solid #284b69;border-radius:11px}
+        .credential-item strong{display:block;color:#f8fafc}
+        .credential-item small {display:block;margin:5px 0 12px;color:#acc0d2}
+        .credential-item a{font-weight:700;color:#7dd3fc;text-decoration:none}
+        .credential-item a:hover{text-decoration:underline}
+        @media(max-width:610px){.story-map,.credentials{grid-template-columns:1fr}.life-logo{width:80px;height:80px;padding:5px}}
 </style>
 </head>
 <body>
@@ -618,9 +638,18 @@
 <section id="work-history" aria-labelledby="work-title">
     <h2 class="section-title" id="work-title">Complete Work &amp; Program Experience</h2>
     <p class="timeline-lead">From high-volume restaurant shifts to spacecraft systems and aerospace hardware, every experience taught me something about working with people, solving problems, and following through.</p>
+    <div class="story-map" aria-label="Choose a part of my professional journey">
+      <a class="story-stop" href="#role-vasts"><span class="story-icon" aria-hidden="true">🚀</span><span>2023 · VASTS space mission policy</span></a>
+      <a class="story-stop" href="#role-papa"><span class="story-icon" aria-hidden="true">🍕</span><span>2024 · Papa Johns</span></a>
+      <a class="story-stop" href="#role-macados"><span class="story-icon" aria-hidden="true">🍽️</span><span>2024–25 · Macado's</span></a>
+      <a class="story-stop" href="#role-blackwing"><span class="story-icon" aria-hidden="true">🛰️</span><span>2026 · Blackwing Space</span></a>
+      <a class="story-stop" href="#role-butler"><span class="story-icon" aria-hidden="true">🪂</span><span>2026 · Butler Parachute Systems</span></a>
+      <a class="story-stop" href="#role-iaci"><span class="story-icon" aria-hidden="true">🌎</span><span>2026 · IACI / GEOINT-ISAC</span></a>
+    </div>
 
     <article class="life-card">
       <img class="life-logo round" src="images/Screenshot 2026-08-27 131325.png" alt="GEOINT-ISAC organization badge" loading="lazy">
+      <span id="role-iaci" class="role-anchor" aria-hidden="true"></span>
       <h3>Space Systems Intern</h3>
       <div class="meta"><a href="https://geoint-isac.global/" target="_blank" rel="noopener noreferrer">International Association of Certified ISAOs (IACI) · GEOINT-ISAC division</a> · Remote · Internship</div>
       <span class="when">May 2026 – Oct 2026</span>
@@ -632,6 +661,7 @@
 
     <article class="life-card">
       <img class="life-logo" src="images/ButlerParachutes.webp" alt="Butler Parachute Systems logo" loading="lazy">
+      <span id="role-butler" class="role-anchor" aria-hidden="true"></span>
       <h3>Engineering Intern</h3>
       <div class="meta"><a href="https://www.butlerparachutes.com/" target="_blank" rel="noopener noreferrer">Butler Parachute Systems, Inc.</a> · Roanoke, Virginia · On-site</div>
       <span class="when">May 2026 – Aug 2026</span>
@@ -641,7 +671,8 @@
     </article>
 
     <article class="life-card">
-      <img class="life-logo" src="images/Blackwing.jpg" alt="Blackwing Space logo" loading="lazy" style="mix-blend-mode:screen;background:transparent;">
+      <img class="life-logo logo-night" src="images/Blackwing.jpg" alt="Blackwing Space logo" loading="lazy">
+      <span id="role-blackwing" class="role-anchor" aria-hidden="true"></span>
       <h3>Regulatory Engineering Intern</h3>
       <div class="meta"><a href="https://www.blackwingspace.com/" target="_blank" rel="noopener noreferrer">Blackwing Space</a> · Remote</div>
       <span class="when">Mar 2026 – Aug 2026</span>
@@ -651,6 +682,7 @@
 
     <article class="life-card">
       <div class="life-brand macados" role="img" aria-label="Macado’s wordmark">Macado’s</div>
+      <span id="role-macados" class="role-anchor" aria-hidden="true"></span>
       <h3>Deli Cook</h3>
       <div class="meta"><a href="https://www.macados.net/" target="_blank" rel="noopener noreferrer">Macado's</a> · Christiansburg, Virginia · Full-time</div>
       <span class="when">Feb 2024 – Apr 2025</span>
@@ -660,6 +692,7 @@
 
     <article class="life-card">
       <img class="life-logo" src="images/NASA_Picture.jpg" alt="Virginia Aerospace Science and Technology Scholars experience at NASA Langley" loading="lazy">
+      <span id="role-vasts" class="role-anchor" aria-hidden="true"></span>
       <h3>Space Law and Policy Specialist</h3>
       <div class="meta"><a href="https://vsgc.odu.edu/vasts/" target="_blank" rel="noopener noreferrer">Virginia Space Grant Consortium · VASTS</a> · Hampton, Virginia · Hybrid student program</div>
       <span class="when">Oct 2023 – Jun 2024</span>
@@ -674,6 +707,7 @@
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Papa_Johns_logo.svg" alt="Papa Johns wordmark" loading="lazy">
         <small>Papa Johns</small>
       </div>
+      <span id="role-papa" class="role-anchor" aria-hidden="true"></span>
       <h3>Restaurant Crew Member</h3>
       <div class="meta"><a href="https://www.papajohns.com/" target="_blank" rel="noopener noreferrer">Papa Johns</a> · Christiansburg, Virginia · Part-time</div>
       <span class="when">Jan 2024 – Feb 2024</span>
@@ -697,6 +731,10 @@
     <div class="meta">Associate of Science in Engineering · Certificate in General Studies</div>
     <span class="when">Aug 2024 – Dec 2025</span>
     <p>Graduated magna cum laude. Earned President’s List recognition in Spring and Fall 2025. Completed engineering and programming projects including water quality analysis, a pH sensor prototype, and MATLAB simulation work.</p>
+    <div class="credentials">
+      <div class="credential-item"><strong>🎓 A.S. in Engineering</strong><small>December 2025 · Magna Cum Laude</small><a href="https://www.parchment.com/u/s/6lkf" target="_blank" rel="noopener noreferrer">Verify official degree ↗</a></div>
+      <div class="credential-item"><strong>📜 Uniform Certificate of General Studies</strong><small>December 2025 · Magna Cum Laude</small><a href="https://www.parchment.com/u/s/6lZJ" target="_blank" rel="noopener noreferrer">Verify official certificate ↗</a></div>
+    </div>
   </article>
   <article class="life-card">
     <div class="life-brand">EMHS</div>
