@@ -451,19 +451,60 @@
             color: #020617;
         }
 
+        /* Integrate logos with dark cards instead of surrounding them in white tiles. */
         .img-logo {
             float: right;
             margin: 0 0 15px 20px;
-            max-width: 110px;
-            background-color: #ffffff; 
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #334155;
+            width: 118px;
+            max-width: 30%;
+            height: auto;
+            background: transparent;
+            padding: 0;
+            border: 0;
+            border-radius: 0;
+            box-shadow: none;
             object-fit: contain;
         }
 
-        .img-patch {
+        /* For light-background artwork, use an SVG color-key to remove white
+           pixels while keeping the original lettering and brand colors. */
+        .img-logo.logo-light-background {
+            filter: url("#logo-remove-white");
+        }
+
+        /* Blackwing's original JPEG has a black background and white wing. */
+        .img-logo.logo-dark-background {
+            mix-blend-mode: screen;
+        }
+
+        /* The original patch PNG includes white outside the circular emblem. */
+        .img-logo.img-patch {
+            clip-path: circle(47.5% at 50% 47%);
             border-radius: 50%;
+            width: 110px;
+        }
+
+        /* Tighter crops remove large transparent margins from wide wordmarks. */
+        .img-logo.logo-butler {
+            width: 138px;
+            max-width: 35%;
+            height: 88px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .img-logo.logo-nrcc {
+            width: 138px;
+            max-width: 35%;
+            height: 76px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .img-logo.logo-vt {
+            width: 106px;
+            height: 90px;
+            object-fit: cover;
         }
 
         footer {
@@ -513,6 +554,14 @@
     </style>
 </head>
 <body>
+<svg aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute;pointer-events:none">
+    <defs>
+        <!-- Keep darker logo artwork opaque while fading near-white image backgrounds. -->
+        <filter id="logo-remove-white" color-interpolation-filters="sRGB">
+            <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -3.333 -3.333 -3.333 0 9.999"/>
+        </filter>
+    </defs>
+</svg>
 
 <nav>
     <a href="#about">About</a>
@@ -624,7 +673,7 @@
     <section id="education">
         <h2 class="section-title">Education</h2>
         <div class="card">
-            <img src="images/Virginia Tech Logo.jpg" alt="Virginia Tech Logo" class="img-logo">
+            <img src="images/Virginia Tech Logo.jpg" alt="Virginia Tech Logo" class="img-logo logo-light-background logo-vt">
             <div class="card-header">
                 <h3><a href="https://vt.edu/" target="_blank" rel="noopener noreferrer">Virginia Tech</a></h3>
             </div>
@@ -634,7 +683,7 @@
         </div>
 
         <div class="card">
-            <img src="images/NRCCwebp.webp" alt="New River Community College Logo" class="img-logo">
+            <img src="images/NRCCwebp.webp" alt="New River Community College Logo" class="img-logo logo-light-background logo-nrcc">
             <div class="card-header">
                 <h3><a href="https://www.nr.edu/" target="_blank" rel="noopener noreferrer">New River Community College</a></h3>
             </div>
@@ -648,7 +697,7 @@
         <h2 class="section-title">Engineering Experience</h2>
 
         <div class="card">
-            <img src="images/ButlerParachutes.webp" alt="Butler Parachute Systems Logo" class="img-logo">
+            <img src="images/ButlerParachutes.webp" alt="Butler Parachute Systems Logo" class="img-logo logo-light-background logo-butler">
             <div class="card-header">
                 <h3>Engineering Intern</h3>
             </div>
@@ -707,7 +756,7 @@
         </div>
 
         <div class="card">
-            <img src="images/Blackwing.jpg" alt="Blackwing Space Logo" class="img-logo">
+            <img src="images/Blackwing.jpg" alt="Blackwing Space Logo" class="img-logo logo-dark-background">
             <div class="card-header">
                 <h3>Regulatory Engineering Intern</h3>
             </div>
