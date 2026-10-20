@@ -451,60 +451,25 @@
             color: #020617;
         }
 
-        /* Integrate logos with dark cards instead of surrounding them in white tiles. */
+        /* Crisp original logos: no color-key SVG filters or enlarged cover-cropping. */
         .img-logo {
-            float: right;
-            margin: 0 0 15px 20px;
-            width: 118px;
-            max-width: 30%;
-            height: auto;
-            background: transparent;
-            padding: 0;
-            border: 0;
-            border-radius: 0;
-            box-shadow: none;
-            object-fit: contain;
+            float: right; margin: 0 0 16px 22px;
+            display: block; width: 138px; max-width: 34%; height: 105px;
+            padding: 11px; object-fit: contain; object-position: center;
+            background: #fff; border: 1px solid #d5dce4;
+            border-radius: 12px; box-shadow: 0 7px 16px rgba(0,0,0,.16);
+            filter: none !important; mix-blend-mode: normal !important;
+            image-rendering: auto;
         }
-
-        /* For light-background artwork, use an SVG color-key to remove white
-           pixels while keeping the original lettering and brand colors. */
-        .img-logo.logo-light-background {
-            filter: url("#logo-remove-white");
-        }
-
-        /* Blackwing's original JPEG has a black background and white wing. */
+        .img-logo.logo-nrcc { width: 156px; height: 100px; }
+        .img-logo.logo-vt { width: 132px; height: 108px; }
+        .img-logo.logo-butler { width: 158px; height: 110px; }
         .img-logo.logo-dark-background {
-            mix-blend-mode: screen;
+            background: #080a0e; border-color: #29344b;
         }
-
-        /* The original patch PNG includes white outside the circular emblem. */
         .img-logo.img-patch {
-            clip-path: circle(47.5% at 50% 47%);
-            border-radius: 50%;
-            width: 110px;
-        }
-
-        /* Tighter crops remove large transparent margins from wide wordmarks. */
-        .img-logo.logo-butler {
-            width: 138px;
-            max-width: 35%;
-            height: 88px;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        .img-logo.logo-nrcc {
-            width: 138px;
-            max-width: 35%;
-            height: 76px;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        .img-logo.logo-vt {
-            width: 106px;
-            height: 90px;
-            object-fit: cover;
+            width: 114px; height: 114px; padding: 6px; border-radius: 50%;
+            object-fit: contain; clip-path: none; background: #fff;
         }
 
         footer {
@@ -561,18 +526,51 @@
             .contact-bar { gap:8px 14px; }
             header .btn { margin: 5px 4px 5px 0 !important; }
         }
-    </style>
+            /* Small aerospace cues guide attention without compromising the CV-first layout. */
+        .quick-nav { display:flex; justify-content:center; align-items:stretch; flex-wrap:wrap; gap:10px; max-width:790px; margin:27px auto 0; }
+        .quick-nav a { display:flex; align-items:center; gap:9px; border:1px solid #295070; background:rgba(9,30,51,.9); color:#e6f5ff; border-radius:10px; padding:10px 16px; text-decoration:none; font-weight:700; font-size:.92rem; }
+        .quick-nav a:hover,.quick-nav a:focus-visible {background:#123956;border-color:#38bdf8; transform:translateY(-2px);}
+        .quick-nav .quick-symbol {font-size:1.18rem;line-height:1;display:inline-block}
+        .section-marker { display:inline-flex; align-items:center; gap:9px; }
+        .section-marker .marker {font-size:1.17rem;line-height:1}
+        .credential-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;clear:both;margin-top:18px}
+        .credential-card {border:1px solid #2c4962;border-radius:11px;background:#0b2238;padding:14px;display:flex;gap:10px;align-items:start;min-width:0}
+        .credential-card .credential-icon {display:flex;flex:none;align-items:center;justify-content:center;width:37px;height:37px;background:#13344e;border-radius:9px;font-size:1.16rem}
+        .credential-card strong {display:block;font-size:.93rem;line-height:1.32;color:#f5faff}
+        .credential-card small {display:block;color:#b5c5d5;margin:5px 0;font-size:.8rem}
+        .credential-card a {display:inline-block;font-size:.82rem;color:#7dd3fc;font-weight:700}
+        .flight-section {margin:48px 0 15px;position:relative}
+        .flight-section .flight-intro {color:var(--text-muted);max-width:690px}
+        .flight-route {display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;position:relative;margin:25px 0 14px;padding:21px 0 0}
+        .flight-route:before {position:absolute;content:"";height:2px;left:7%;right:7%;top:35px;background:repeating-linear-gradient(to right,#38bdf8 0 11px,transparent 11px 21px);opacity:.6}
+        .flight-stop {min-width:0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:5px;color:var(--text-main);text-decoration:none;padding:0 4px 13px;z-index:1;border-radius:10px}
+        .flight-stop:hover,.flight-stop:focus-visible {background:#0c2a42;outline-offset:4px}
+        .flight-stop .flight-dot {display:flex;align-items:center;justify-content:center;width:32px;height:32px;border:2px solid #48c8fa;background:#092337;border-radius:50%;font-size:.99rem}
+        .flight-stop .flight-year {font-weight:800;color:#7dd3fc;font-size:.83rem;line-height:1.1;margin-top:10px}
+        .flight-stop strong {font-size:.87rem;line-height:1.3;color:#fff}
+        .flight-stop small {font-size:.72rem;line-height:1.3;color:#a8bdd1}
+        .flight-guide {display:flex;align-items:center;gap:10px;color:#9eb2c9;font-size:.86rem;margin:8px 0 10px}
+        .flight-guide svg{flex:none}
+        .flight-section .timeline-cta {display:inline-flex;align-items:center;gap:8px;color:#7dd3fc;font-weight:750;margin-top:8px;text-decoration:none}
+        .flight-section .timeline-cta:hover {text-decoration:underline}
+        @media(max-width:800px){
+          .flight-route{grid-template-columns:repeat(3,minmax(0,1fr));gap:15px 6px}
+          .flight-route:before{display:none}
+          .flight-stop{background:#0f2438;border:1px solid #203e57;padding:14px 7px;gap:7px}
+          .flight-stop .flight-year{margin-top:2px}
+        }
+        @media(max-width:550px){
+          .credential-grid {grid-template-columns:1fr}
+          .flight-route {grid-template-columns:repeat(2,minmax(0,1fr))}
+          .quick-nav a{font-size:.86rem;padding:9px 11px}
+          .img-logo{max-width:38%;width:104px;height:85px;padding:7px;margin-left:12px}
+          .img-logo.logo-nrcc,.img-logo.logo-butler{width:120px;height:90px}
+          .img-logo.img-patch{width:93px;height:93px}
+        }
+        @media(prefers-reduced-motion:reduce){.quick-nav a{transition:none}.quick-nav a:hover{transform:none}}
+</style>
 </head>
 <body>
-<svg aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute;pointer-events:none">
-    <defs>
-        <!-- Keep darker logo artwork opaque while fading near-white image backgrounds. -->
-        <filter id="logo-remove-white" color-interpolation-filters="sRGB">
-            <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -3.333 -3.333 -3.333 0 9.999"/>
-        </filter>
-    </defs>
-</svg>
-
 <nav aria-label="Main navigation">
     <a href="#about">About</a>
     <a href="#research">Research</a>
@@ -595,6 +593,12 @@
     </div>
     <a href="Ryan_Epperly_Engineering_Resume.pdf" class="btn" target="_blank" rel="noopener noreferrer">View Resume (PDF)</a>
     <a href="#research" class="btn" style="margin-left:8px;background:transparent;color:var(--accent-color);border:1px solid var(--accent-color);">Explore Research ↓</a>
+    <div class="quick-nav" aria-label="Explore this portfolio">
+      <a href="#research"><span class="quick-symbol" aria-hidden="true">🛰️</span> Research</a>
+      <a href="#experience"><span class="quick-symbol" aria-hidden="true">🛠️</span> Engineering</a>
+      <a href="#flight-path"><span class="quick-symbol" aria-hidden="true">✈️</span> My Flight Path</a>
+      <a href="#education"><span class="quick-symbol" aria-hidden="true">🎓</span> Education</a>
+    </div>
 </header>
 
 <div class="container">
@@ -608,7 +612,7 @@
                 <div class="tag-group" style="margin-top: 15px;">
                     <ul class="tags">
                         <li>B.S. Aerospace Engineering | Virginia Tech (2028)</li>
-                        <li>A.S. Engineering | New River Community College (2025)</li>
+                        <li>A.S. Engineering &amp; General Studies Certificate | NRCC (2025)</li>
                     </ul>
                 </div>
             </div>
@@ -689,9 +693,22 @@
             <div class="card-header">
                 <h3><a href="https://www.nr.edu/" target="_blank" rel="noopener noreferrer">New River Community College</a></h3>
             </div>
-            <div class="subtitle">Associate of Science (A.S.), Engineering</div>
+            <div class="subtitle">Two completed academic credentials · Magna Cum Laude</div>
             <span class="date" style="margin-top: 10px;">Aug 2024 – Dec 2025</span>
-            <p style="margin: 5px 0 0;">Graduated Magna Cum Laude</p>
+            <div class="credential-grid">
+              <div class="credential-card">
+                <span class="credential-icon" aria-hidden="true">🎓</span>
+                <div><strong>Associate of Science in Engineering</strong>
+                  <small>December 2025 · Magna Cum Laude</small>
+                  <a href="https://www.parchment.com/u/s/6lkf" target="_blank" rel="noopener noreferrer">View official credential ↗</a></div>
+              </div>
+              <div class="credential-card">
+                <span class="credential-icon" aria-hidden="true">📜</span>
+                <div><strong>Uniform Certificate of General Studies</strong>
+                  <small>December 2025 · Magna Cum Laude</small>
+                  <a href="https://www.parchment.com/u/s/6lZJ" target="_blank" rel="noopener noreferrer">View official credential ↗</a></div>
+              </div>
+            </div>
         </div>
     </section>
     
@@ -776,7 +793,22 @@
         </div>
     </section>
 
-    <section id="skills" aria-labelledby="skills-title">
+        <section id="flight-path" class="flight-section" aria-labelledby="flight-title">
+      <h2 id="flight-title" class="section-title"><span class="section-marker"><span class="marker" aria-hidden="true">✈️</span> My Flight Path</span></h2>
+      <p class="flight-intro">Every stop helped shape the engineer I am becoming—from working rushes in restaurants to analyzing spacecraft, building hardware, and studying aerospace at Virginia Tech. Pick a milestone to explore the full story.</p>
+      <div class="flight-route" aria-label="Interactive career timeline">
+        <a class="flight-stop" href="background.html#role-vasts"><span class="flight-dot" aria-hidden="true">🚀</span><span class="flight-year">2023</span><strong>VASTS</strong><small>Space law &amp; mission policy</small></a>
+        <a class="flight-stop" href="background.html#role-papa"><span class="flight-dot" aria-hidden="true">🍕</span><span class="flight-year">2024</span><strong>Papa Johns</strong><small>Learning fast teamwork</small></a>
+        <a class="flight-stop" href="background.html#role-macados"><span class="flight-dot" aria-hidden="true">🍽️</span><span class="flight-year">2024–25</span><strong>Macado's</strong><small>High-volume kitchen work</small></a>
+        <a class="flight-stop" href="background.html#all-education"><span class="flight-dot" aria-hidden="true">🎓</span><span class="flight-year">2025</span><strong>NRCC</strong><small>Associate's &amp; certificate</small></a>
+        <a class="flight-stop" href="background.html#role-blackwing"><span class="flight-dot" aria-hidden="true">🛰️</span><span class="flight-year">2026</span><strong>Blackwing</strong><small>CubeSat regulatory systems</small></a>
+        <a class="flight-stop" href="background.html#role-butler"><span class="flight-dot" aria-hidden="true">🪂</span><span class="flight-year">2026</span><strong>Butler &amp; IACI</strong><small>Hardware, space &amp; resilience</small></a>
+      </div>
+      <p class="flight-guide"><svg width="32" height="26" viewBox="0 0 32 26" aria-hidden="true" focusable="false"><path d="m1 13 11-3L25 1l2 3-9 10 10 6-1 3-12-4-7 6-2-1 2-9-7 1z" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-linejoin="round"/></svg> Select any stop to open that chapter of my journey.</p>
+      <a class="timeline-cta" href="background.html#work-history">Follow the full interactive career timeline →</a>
+    </section>
+
+<section id="skills" aria-labelledby="skills-title">
         <h2 id="skills-title" class="section-title">Technical Focus</h2>
         <div class="card compact-focus">
             <p>My primary interests are spacecraft dynamics, guidance, navigation, and control, with hands-on experience in simulation, mechanical design, and engineering testing.</p>
